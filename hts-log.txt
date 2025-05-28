@@ -1,0 +1,42 @@
+
+
+
+Information, Warnings and Errors reported for this mirror:
+
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+
+	such as username/password authentication for websites mirrored in this project
+
+	do not share these files/folders if you want these information to remain private
+
+
+
+09:54:28	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/assets/fonts/slick.eot (from https://zwin.io/html/stooon/assets/css/vendor.css)
+
+09:54:35	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/assets/fonts/slick.svg (from https://zwin.io/html/stooon/assets/css/vendor.css)
+
+09:54:42	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/shop.html (from https://zwin.io/html/stooon/collection.html)
+
+09:54:42	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/popper.js (from https://zwin.io/html/stooon/assets/js/vendor.js)
+
+09:54:47	Error: 	"Bad Request" (400) at link https://www.googletagmanager.com/gtm.js?id= (from https://zwin.io/html/stooon/assets/fonts/slick.eot?)
+
+09:55:05	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/assets/fonts/signin (from https://zwin.io/wp-content/cache/minify/9b516.js)
+
+09:55:05	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/assets/fonts/t (from https://zwin.io/wp-content/cache/minify/d315e.js)
+
+09:55:05	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/assets/fonts/e (from https://zwin.io/wp-content/cache/minify/d315e.js)
+
+09:55:05	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/assets/fonts/window.location.href (from https://zwin.io/wp-content/cache/minify/d315e.js)
+
+09:55:05	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/assets/fonts/assets/dist/js/signin.js?ver= (from https://zwin.io/wp-content/cache/minify/d315e.js)
+
+09:55:05	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/assets/fonts/gallery (from https://zwin.io/wp-content/cache/minify/d342a.js)
+
+09:55:05	Error: 	"Not Found" (404) at link https://zwin.io/html/stooon/assets/fonts/field-icon (from https://zwin.io/wp-content/cache/minify/2fd51.js)
+
+
+
+ 
+(12 errors, 0 warnings, 0 messages)
+
