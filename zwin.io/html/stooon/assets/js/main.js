@@ -10,7 +10,7 @@
 
         $(".video-btn-style-01").magnificPopup({
             items: {
-                src: "https://www.youtube.com/watch?v=AOXl0Ll_t9s"
+                src: "assets/img/others/video.mp4"
             },
             type: "iframe",
             iframe: {
@@ -23,7 +23,7 @@
                     youtube: {
                         index: "youtube.com/",
                         id: "v=",
-                        src: "//www.youtube.com/embed/AOXl0Ll_t9s"
+                        src: "//assets/img/others/video.mp4"
                     }
                 },
                 srcAction: "iframe_src"
@@ -32,7 +32,7 @@
 
         $(".video-btn-style-02").magnificPopup({
             items: {
-                src: "https://www.youtube.com/watch?v=AOXl0Ll_t9s"
+                src: "assets/img/others/video.mp4"
             },
             type: "iframe",
             iframe: {
@@ -45,7 +45,7 @@
                     youtube: {
                         index: "youtube.com/",
                         id: "v=",
-                        src: "//www.youtube.com/embed/AOXl0Ll_t9s"
+                        src: "//assets/img/others/video.mp4"
                     }
                 },
                 srcAction: "iframe_src"
@@ -54,7 +54,7 @@
 
         $(".video-btn-style-03").magnificPopup({
             items: {
-                src: "https://www.youtube.com/watch?v=AOXl0Ll_t9s"
+                src: "assets/img/others/video.mp4"
             },
             type: "iframe",
             iframe: {
@@ -67,7 +67,7 @@
                     youtube: {
                         index: "youtube.com/",
                         id: "v=",
-                        src: "//www.youtube.com/embed/AOXl0Ll_t9s"
+                        src: "//assets/img/others/video.mp4"
                     }
                 },
                 srcAction: "iframe_src"
@@ -76,7 +76,7 @@
 
         $(".btn-video").magnificPopup({
             items: {
-                src: "https://www.youtube.com/watch?v=AOXl0Ll_t9s"
+                src: "//assets/img/others/video.mp4"
             },
             type: "iframe",
             iframe: {
@@ -89,7 +89,7 @@
                     youtube: {
                         index: "youtube.com/",
                         id: "v=",
-                        src: "//www.youtube.com/embed/AOXl0Ll_t9s"
+                        src: "//assets/img/others/video.mp4"
                     }
                 },
                 srcAction: "iframe_src"
