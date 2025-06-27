@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -9,13 +10,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stooon - Fashion eCommerce HTML Template</title>
     <!-- favicon -->
-    <link rel=icon href=assets/img/favicon.png sizes="20x20" type="image/png">
+    <link rel=icon href="{% static 'assets/img/favicon.png' %} " sizes="20x20" type="image/png">
     <!-- Vendor Stylesheet -->
-    <link rel="stylesheet" href="assets/css/vendor.css">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor.css' %}">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <!-- responsive Stylesheet -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
      
 </head>
 <body>
@@ -35,7 +36,7 @@
     <div class="coming-area pb-5">
         <div class="coming-header text-center">
             <a href="index.html">
-                <img src="assets/img/logo-white.png" alt="">
+                <img src="{% static 'assets/img/logo-white.png' %}" alt="">
             </a>
         </div>
         <div class="coming-content margin-top-80 text-center pb-5">
@@ -97,7 +98,7 @@
     <!-- coming content end -->
 
     <!-- all plugins here -->
-    <script src="assets/js/vendor.js"></script>
+    <script src="{% static 'assets/js/vendor.js' %}"></script>
     <script>
         // countdown 
         function getTimeRemaining(endtime) {
@@ -143,7 +144,7 @@
         initializeClock('clockdiv', deadline);
     </script>
     <!-- main js  -->
-    <script src="assets/js/main.js"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
     
 </body>
 
