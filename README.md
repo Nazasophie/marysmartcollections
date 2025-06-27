@@ -1,6 +1,8 @@
 # Create and activate a virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# On Windows: venv\Scripts\activate
+source venv/bin/activate  
 
 # Install Django
 pip install django

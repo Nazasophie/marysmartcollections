@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -9,14 +11,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stooon - Fashion eCommerce HTML Template</title>
     <!-- favicon -->
-    <link rel=icon href=assets/img/favicon.png sizes="20x20" type="image/png">
+  <link rel=icon href="{% static 'assets/img/favicon.png' %}" sizes="20x20" type="image/png">
     <!-- Vendor Stylesheet -->
-    <link rel="stylesheet" href="assets/css/vendor.css">
-    <!-- Main Stylesheet --> 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor.css' %}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <!-- responsive Stylesheet -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
-     <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
      
@@ -51,7 +53,7 @@
         <button class="sidebar-menu-close">X</button>
         <div class="sidebar-inner">
             <div class="sidebar-logo">
-                <img src="assets/img/logo.png" alt="">
+                <img src="{% static 'assets/img/logo.png' %}" alt="">
             </div>
             <div class="sidemenu-text">
                 <p>We believe brand interaction is key in commu- nication. Real inno vations and a positive customer experience are the heart of successful commu- nication.</p>
@@ -112,7 +114,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-4 order-1 align-self-center">
                         <div class="logo">
-                            <a href="index-5.html"><img src="assets/img/logo.png" alt=""></a>
+                            <a href="index-5.html"><img src="{% static 'assets/img/logo.png' %}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 order-3 order-lg-2">
@@ -168,7 +170,7 @@
                                         <li>
                                             <div class="d-flex">
                                                 <div class="thumb">
-                                                    <img src="assets/img/shop/c1.png" alt="">
+                                                    <img src="{% static 'assets/img/shop/c1.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
@@ -183,7 +185,7 @@
                                         <li>
                                             <div class="d-flex">
                                                 <div class="thumb">
-                                                    <img src="assets/img/shop/c2.png" alt="">
+                                                    <img src="{% static 'assets/img/shop/c2.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
@@ -198,7 +200,7 @@
                                         <li>
                                             <div class="d-flex">
                                                 <div class="thumb">
-                                                    <img src="assets/img/shop/c3.png" alt="">
+                                                    <img src="{% static 'assets/img/shop/c3.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
@@ -213,7 +215,7 @@
                                         <li>
                                             <div class="d-flex">
                                                 <div class="thumb">
-                                                    <img src="assets/img/shop/c4.png" alt="">
+                                                    <img src="{% static 'assets/img/shop/c4.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
@@ -392,7 +394,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/1.png" alt="">
+                                    <img src="{% static 'assets/img/shop/1.png' %}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -417,7 +419,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/2.png" alt="">
+                                    <img src="{% static 'assets/img/shop/2.png' %}" alt="">
                                     <span class="sale">Sale! 13%</span>
                                     <span class="new margin-top-35">New</span>
                                     <ul class="cart-action">
@@ -444,7 +446,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/3.png" alt="">
+                                    <img src="{% static 'assets/img/shop/3.png' %}" alt="">
                                     <span class="new">New</span>
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
@@ -470,7 +472,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/4.png" alt="">
+                                    <img src="{% static 'assets/img/shop/4.png' %}" alt="">
                                     <span class="out">Sold out</span>
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
@@ -496,7 +498,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/5.png" alt="">
+                                    <img src="{% static 'assets/img/shop/5.png' %}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -521,7 +523,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/6.png" alt="">
+                                    <img src="{% static 'assets/img/shop/6.png' %}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -549,7 +551,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/7.png" alt="">
+                                    <img src="{% static 'assets/img/shop/7.png' %}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -574,7 +576,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/8.png" alt="">
+                                    <img src="{% static 'assets/img/shop/8.png' %}" alt="">
                                     <span class="sale">Sale! 13%</span>
                                     <span class="new margin-top-35">New</span>
                                     <ul class="cart-action">
@@ -601,7 +603,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/9.png" alt="">
+                                    <img src="{% static 'assets/img/shop/9.png' %}" alt="">
                                     <span class="new">New</span>
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
@@ -627,7 +629,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/10.png" alt="">
+                                    <img src="{% static 'assets/img/shop/10.png' %}" alt="">
                                     <span class="out">Sold out</span>
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
@@ -653,7 +655,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/11.png" alt="">
+                                    <img src="{% static 'assets/img/shop/11.png'%}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -678,7 +680,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/12.png" alt="">
+                                    <img src="{% static 'assets/img/shop/12.png' %}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -704,7 +706,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/13.png" alt="">
+                                    <img src="{% static 'assets/img/shop/13.png' %}" alt="">
                                     <span class="out">Sold out</span>
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
@@ -730,7 +732,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/14.png" alt="">
+                                    <img src="{% static 'assetsimg/shop/14.png' %}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -755,7 +757,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/15.png" alt="">
+                                    <img src="{% static 'assets/img/shop/15.png' %}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -781,7 +783,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/16.png" alt="">
+                                    <img src="{% static 'assets/img/shop/16.png' %}" alt="">
                                     <span class="out">Sold out</span>
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
@@ -807,7 +809,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/17.png" alt="">
+                                    <img src="{% static 'assetsts/img/shop/17.png' %}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -832,7 +834,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="assets/img/shop/18.png" alt="">
+                                    <img src="{% static 'assets/img/shop/18.png' %}" alt="">
                                     <ul class="cart-action">
                                         <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
                                         <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -861,7 +863,7 @@
                     <div class="row product-style-03 margin-top-40">
                         <div class="col-md-4 col-sm-12 col-12">
                             <div class="thumb">
-                                <img src="assets/img/shop/1.png" alt="">
+                                <img src="{% static 'assets/img/shop/1.png' %}" alt="">
                             </div>                                        
                         </div>
                         <div class="col-md-8 col-sm-12 col-12">
@@ -892,7 +894,7 @@
                     <div class="row product-style-03 margin-top-40">
                         <div class="col-md-4 col-sm-12 col-12">
                             <div class="thumb">
-                                <img src="assets/img/shop/2.png" alt="">
+                                <img src="{% static 'assets/img/shop/2.png' %}" alt="">
                             </div>                                        
                         </div>
                         <div class="col-md-8 col-sm-12 col-12">
@@ -923,7 +925,7 @@
                     <div class="row product-style-03 margin-top-40">
                         <div class="col-md-4 col-sm-12 col-12">
                             <div class="thumb">
-                                <img src="assets/img/shop/3.png" alt="">
+                                <img src="{% static 'assets/img/shop/3.png' %}" alt="">
                             </div>                                        
                         </div>
                         <div class="col-md-8 col-sm-12 col-12">
@@ -954,7 +956,7 @@
                     <div class="row product-style-03 margin-top-40">
                         <div class="col-md-4 col-sm-12 col-12">
                             <div class="thumb">
-                                <img src="assets/img/shop/4.png" alt="">
+                                <img src="{% static 'assets/img/shop/4.png' %}" alt="">
                             </div>                                        
                         </div>
                         <div class="col-md-8 col-sm-12 col-12">
@@ -985,7 +987,7 @@
                     <div class="row product-style-03 margin-top-40">
                         <div class="col-md-4 col-sm-12 col-12">
                             <div class="thumb">
-                                <img src="assets/img/shop/5.png" alt="">
+                                <img src="{% static 'assets/img/shop/5.png' %}" alt="">
                             </div>                                        
                         </div>
                         <div class="col-md-8 col-sm-12 col-12">
@@ -1016,7 +1018,7 @@
                     <div class="row product-style-03 margin-top-40">
                         <div class="col-md-4 col-sm-12 col-12">
                             <div class="thumb">
-                                <img src="assets/img/shop/6.png" alt="">
+                                <img src="{% static 'assets/img/shop/6.png' %}" alt="">
                             </div>                                        
                         </div>
                         <div class="col-md-8 col-sm-12 col-12">
@@ -1047,7 +1049,7 @@
                     <div class="row product-style-03 margin-top-40">
                         <div class="col-md-4 col-sm-12 col-12">
                             <div class="thumb">
-                                <img src="assets/img/shop/7.png" alt="">
+                                <img src="{% static 'assets/img/shop/7.png' %}" alt="">
                             </div>                                        
                         </div>
                         <div class="col-md-8 col-sm-12 col-12">
@@ -1141,25 +1143,25 @@
                 <div class="col-md-12">
                     <div class="instagram-slider2">
                         <div class="thumb">
-                            <img src="assets/img/instagram/1.png" alt="">
+                            <img src="{% static 'assets/img/instagram/1.png %}'" alt="">
                         </div>
                         <div class="thumb">
-                            <img src="assets/img/instagram/2.png" alt="">
+                            <img src="{% static 'assets/img/instagram/2.png' %}" alt="">
                         </div>
                         <div class="thumb">
-                            <img src="assets/img/instagram/3.png" alt="">
+                            <img src="{% static 'assets/img/instagram/3.png' %}" alt="">
                         </div>
                         <div class="thumb">
-                            <img src="assets/img/instagram/4.png" alt="">
+                            <img src="{% static 'assets/img/instagram/4.png' %}" alt="">
                         </div>
                         <div class="thumb">
-                            <img src="assets/img/instagram/5.png" alt="">
+                            <img src="{% static 'assets/img/instagram/5.png' %}" alt="">
                         </div>
                         <div class="thumb">
-                            <img src="assets/img/instagram/6.png" alt="">
+                            <img src="{% static 'assets/img/instagram/6.png' %}" alt="">
                         </div>
                         <div class="thumb">
-                            <img src="assets/img/instagram/6.png" alt="">
+                            <img src="{% static 'assets/img/instagram/6.png' %}" alt="">
                         </div>
                     </div>
                 </div>
@@ -1246,12 +1248,12 @@
                     </div>
                     <div class="col-md-6">
                         <ul>
-                            <li><a href="#"><img src="assets/img/payment/1.png" alt=""></a></li>
-                            <li><a href="#"><img src="assets/img/payment/2.png" alt=""></a></li>
-                            <li><a href="#"><img src="assets/img/payment/3.png" alt=""></a></li>
-                            <li><a href="#"><img src="assets/img/payment/4.png" alt=""></a></li>
-                            <li><a href="#"><img src="assets/img/payment/5.png" alt=""></a></li>
-                            <li><a href="#"><img src="assets/img/payment/6.png" alt=""></a></li>
+                            <li><a href="#"><img src="{% static 'assets/img/payment/1.png' %}" alt=""></a></li>
+                            <li><a href="#"><img src="{% static 'assets/img/payment/2.png' %}" alt=""></a></li>
+                            <li><a href="#"><img src="{% static 'assets/img/payment/3.png' %}" alt=""></a></li>
+                            <li><a href="#"><img src="{% static 'assets/img/payment/4.png' %}" alt=""></a></li>
+                            <li><a href="#"><img src="{% static 'assets/img/payment/5.png' %}" alt=""></a></li>
+                            <li><a href="#"><img src="{% static 'assets/img/payment/6.png' %}" alt=""></a></li>
                         </ul>
                     </div>
                 </div>
@@ -1267,9 +1269,9 @@
     <!-- back to top area end -->
 
     <!-- all plugins here -->
-    <script src="assets/js/vendor.js"></script>
+    <script src="{% static 'assets/js/vendor.js' %}"></script>
     <!-- main js  -->
-    <script src="assets/js/main.js"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
     
 </body>
 
