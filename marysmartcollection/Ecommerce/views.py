@@ -27,7 +27,7 @@ def home(request,category_slug=None):
     category = None
     categories = Category.objects.all()
 
-    products = Product.objects.all()
+    products = Product.objects.filter(available=True)
     # new_price = Product.formatted_price
     if category_slug:
         category = get_object_or_404(Category,
@@ -41,8 +41,11 @@ def home(request,category_slug=None):
         # 'new_price': new_price,
         }
     
-    
-    return render(request, 'index.html', context)
+    if request.resolver_match.url_name == 'home':
+        template_name = 'index.html'
+    else:
+        template_name = 'collection-full.html'
+    return render(request, template_name, context)
 
 
 
@@ -75,7 +78,7 @@ def product_detail(request, id, slug,category_slug=None):
     
     
 
-    return render(request, 'collection-full.html', context)
+    return render(request, 'single-product.html', context)
 
 
 def payment(request,category_slug=None):
@@ -187,7 +190,25 @@ def shoping_cart(request):
     return render(request, 'shoping-cart.html', )
 def coming_soon(request):
     return render(request, 'coming-soon.html', )
-def collection_full(request):
-    return render(request, 'collection-full.html', )
+def collection_full(request,category_slug=None):
+    category = None
+    categories = Category.objects.all()
+
+    products = Product.objects.filter(available=True)
+    # new_price = Product.formatted_price
+    if category_slug:
+        category = get_object_or_404(Category,
+                                     slug=category_slug)
+        products = products.filter(category=category)
+    
+    context = {
+        'category' : category,
+        'categories': categories,
+        'products': products,
+        # 'new_price': new_price,
+        }
+    
+
+    return render(request, 'collection-full.html', context)
 def single_product(request):
     return render(request, 'single-product.html', )

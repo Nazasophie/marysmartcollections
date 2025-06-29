@@ -16,6 +16,12 @@ pip install pillow
 pip install whitenoise
 
 
+pip install djangorestframework
+
+
+pip install humanize
+
+
 
 # Running the server 
 python manage.py runserver

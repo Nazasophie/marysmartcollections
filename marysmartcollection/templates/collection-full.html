@@ -391,33 +391,38 @@
                     <div class="row">
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
+                                {% for product in products %}
                                 <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/1.png' %}" alt="">
+                                    <a href="{{ product.get_absolute_url }}"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
+                                        static " img/no_image.png" %}{% endif %}" alt="No image"></a>
                                     <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="icon-add-to-cat"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="icon-heart"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="content text-center">
                                     <span class="brand">Brand: geek</span>
                                     <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
                                     </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
+                                    <h6 class="title"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h6>
                                     <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
+                                        <span class="new-price">${{ product.new_price }}</span>
                                     </div>
                                 </div>
+                                {% endfor %}
                             </div>
                         </div>
+                        {% for product in products %}
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/2.png' %}" alt="">
+                                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
+                                        static " img/no_image.png" %}{% endif %}" alt="No image">
                                     <span class="sale">Sale! 13%</span>
                                     <span class="new margin-top-35">New</span>
                                     <ul class="cart-action">
@@ -434,401 +439,15 @@
                                         <li><a href="#"><i class="fa fa-star-o"></i></a></li>
                                         <li><a href="#"><i class="fa fa-star-o"></i></a></li>
                                     </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
+                                    <h6 class="title"><a href="#">{{ product.name }}</a></h6>
                                     <div class="content-price d-flex align-self-center justify-content-center">
                                         <span class="new-price">$450.00</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/3.png' %}" alt="">
-                                    <span class="new">New</span>
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/4.png' %}" alt="">
-                                    <span class="out">Sold out</span>
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/5.png' %}" alt="">
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/6.png' %}" alt="">
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                    <span class="sale">Sale! 13%</span>
-                                    <div class="product-countdown clockdiv" data-countdown="2021/02/02">
-                                    </div>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/7.png' %}" alt="">
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/8.png' %}" alt="">
-                                    <span class="sale">Sale! 13%</span>
-                                    <span class="new margin-top-35">New</span>
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/9.png' %}" alt="">
-                                    <span class="new">New</span>
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/10.png' %}" alt="">
-                                    <span class="out">Sold out</span>
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/11.png'%}" alt="">
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/12.png' %}" alt="">
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                    <span class="sale">Sale! 13%</span>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/13.png' %}" alt="">
-                                    <span class="out">Sold out</span>
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assetsimg/shop/14.png' %}" alt="">
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/15.png' %}" alt="">
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                    <span class="sale">Sale! 13%</span>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assets/img/shop/16.png' %}" alt="">
-                                    <span class="out">Sold out</span>
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <img src="{% static 'assetsts/img/shop/17.png' %}" alt="">
-                                    <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: geek</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">

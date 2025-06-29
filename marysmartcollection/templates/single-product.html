@@ -289,58 +289,69 @@
                         <div class="col-lg-5 col-md-6">
                             <div class="slider-tabfor margin-top-20">
                                 <div class="single-item">
-                                    <img src="{% static 'assets/img/product-details/big1.png' %}" alt="">
+                                    <img src="{% if product.image %}{{ product.image.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                 </div>
                                 <div class="single-item">
-                                    <img src="{% static 'assets/img/product-details/big1.png' }" alt="">
+                                    <img src="{% if product.image %}{{ product.image1.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                 </div>
                                 <div class="single-item">
-                                    <img src="{% static 'assets/img/product-details/big1.png' % }" alt="">
+                                    <img src="{% if product.image %}{{ product.image2.url }}{% else %}
+                                    {% static 'img/no_image.png' %}{% endif %}" alt="">
                                 </div>
                                 <div class="single-item">
-                                    <img src="{% static 'assets/img/product-details/big1.png' %}" alt="">
+                                    <img src="{% if product.image %}{{ product.image.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                 </div>
                                 <div class="single-item">
-                                    <img src="{% static 'assets/img/product-details/big1.png' %}" alt="">
+                                    <img src="{% if product.image %}{{ product.image1.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                 </div>
                             </div>
                             <div class="slider-tabnav">
                                 <div class="single-item">
                                     <div class="img">
-                                        <img src="{% static 'assets/img/product-details/1.png' %}" alt="">
+                                       <img src="{% if product.image %}{{ product.image2.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                     </div>
                                 </div>
                                 <div class="single-item">
                                     <div class="img">
-                                        <img src="{% static 'assets/img/product-details/1.png' %}" alt="">
+                                       <img src="{% if product.image %}{{ product.image.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                     </div>
                                 </div>
                                 <div class="single-item">
                                     <div class="img">
-                                        <img src="{% static 'assets/img/product-details/1.png' %}" alt="">
+                                       <img src="{% if product.image %}{{ product.image1.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                     </div>
                                 </div>
                                 <div class="single-item">
                                     <div class="img">
-                                        <img src="{% static 'assets/img/product-details/1.png' %}" alt="">
+                                       <img src="{% if product.image %}{{ product.image2.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                     </div>
                                 </div>
                                 <div class="single-item">
                                     <div class="img">
-                                        <img src="{% static 'assets/img/product-details/1.png' %}" alt="">
+                                       <img src="{% if product.image %}{{ product.image.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                     </div>
                                 </div>
                                 <div class="single-item">
                                     <div class="img">
-                                        <img src="{% static 'assets/img/product-details/1.png' %}" alt="">
+                                       <img src="{% if product.image %}{{ product.image1.url }}{% else %}
+            {% static 'img/no_image.png' %}{% endif %}" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-7 col-md-6">
                             <div class="content-part margin-top-20">
-                                <h3 class="product-title">Faxon Canvas Low-Top Sneaker Inspired Slim Ankle Leg Jean</h3>
-                                <p class="price">$90.00</p>
+                                <h3 class="product-title">{{ product.name}}</h3>
+                                <p class="price">${{ product.new_price }}</p>
                                 <span class="rating ml-0">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -376,7 +387,7 @@
                                 </div>
                                 <p class="specifications">MATERIAL: Cotton, Wool, Silk</p>
                                 <div class="btn-wrapper d-flex">
-                                    <div class="input-group">
+                                    <!-- <div class="input-group">
                                         <div class="input-group-prepend align-self-center">
                                             <a class="btn btn-sm" id="minus-btn"><i class="fa fa-minus"></i></a>
                                         </div>
@@ -384,10 +395,17 @@
                                         <div class="input-group-prepend align-self-center">
                                             <a class="btn btn-sm" id="plus-btn"><i class="fa fa-plus"></i></a>
                                         </div>
-                                    </div>
-                                    <div class="add-to-cart">
-                                        <a href="shoping-cart.html"><i class="icon-add-to-cat"></i> Add to cart</a>
-                                    </div>
+                                    </div> -->
+            <form action="{% url 'cart:cart_add' product.id %}" method="post" id="quantity">
+                {{ cart_product_form }}
+                <br>
+                {% csrf_token %}
+                                
+                                        <!-- <i class="icon-add-to-cat"></i>  -->
+                                        <input style="cursor: pointer; border: none; margin: 0;" type="submit" class="add-to-cart" name="" id="cartbtn" value="Add to Cart">
+                                  
+
+            </form>
                                 </div>
                                 <div class="btn-wrapper">
                                     <a href="#" class="btn btn-buy">Buy it now</a>
