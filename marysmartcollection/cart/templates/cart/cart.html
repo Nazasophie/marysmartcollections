@@ -1,0 +1,249 @@
+{% extends 'Ecommerce/base.html' %}
+
+{% load static %}
+{% load humanize %}
+{% block 'content' %}
+
+<head>
+	<link rel="stylesheet" href="{% static 'Ecommerce/cart.css'%}">
+	<style>
+		.fa-cart-shopping {
+			color: #000000;
+		}
+		@media screen and (max-width:767px) {
+			nav #search {
+        display: block;
+        position: relative;
+        left: -140%;
+        top: -7px;
+        z-index: 1;
+        font-size: 20px;
+        color: white;
+    }
+    #profile {
+        position: relative;
+        left: -2pc;
+        top: -31px;
+    }
+
+    #cart {
+        position: relative;
+        left: .8pc;
+        top: -58px;
+        width: 91%;
+    }
+	.newsletter input[type='email'] {
+        height: 46px;
+        border: none;
+        width: 65.4%;
+        position: relative;
+        top: 20px;
+        left: .5%;
+        font-weight: bold;
+        color: black;
+        padding-left: 50px;
+        border-radius: 50px 0px 0px 50px;
+    }
+
+		}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	nav #search {
+        position: relative;
+        left: -6pc;
+        top: -7px;
+        font-size: 15px;
+        z-index: 2;
+		font-size: 20px;
+        color: white;
+    }
+
+    nav #profile {
+        position: relative;
+        left: .8pc;
+        top: -31px;
+    }
+
+    nav #cart {
+        position: relative;
+        left: -3pc;
+        top: -58px;
+        width: 91%;
+    }
+	.newsletter input[type='email'] {
+  height: 46px;
+  border: none;
+  width: 47.6%;
+  position: relative;
+  top: 19px;
+  left: .5%;
+  font-weight: bold;
+  color: black;
+  padding-left: 50px;
+  border-radius: 50px 0px 0px 50px;
+}
+nav input {
+        display: none;
+        border-radius: 20px;
+        border: none;
+        padding: 10px;
+        /* padding-left: 35px; */
+        float: right;
+        color: black;
+        position: relative;
+        /* right: 9%; */
+        margin-top: 1.3pc;
+        font-size: 12px;
+        width: 18%;
+        height: 33px;
+    }
+    .product-image {
+    max-width: 100%;
+    height: 2pc;
+  }
+}
+
+	@media only screen and (min-width: 1024px) {
+
+		footer .foot_head .newsletter input[type='email'] {
+        height: 46px;
+        border: none;
+        width: 40%;
+        position: relative;
+        top: 21px;
+        left: -68px;
+        font-weight: bold;
+        color: black;
+        padding-left: 50px;
+        border-radius: 50px;
+        border-radius: 50px 0px 0px 50px;
+    }
+    .btn-go-checkout:hover {
+        cursor: pointer;
+    }
+	}
+	</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<div class="center-wrapper">
+	<div class="content">
+		<form action="{% url 'Ecommerce:payment' %}" id="myForm">
+            {% for item in cart %}
+                {% with product=item.product %}
+                    <div class="bag-product">
+                        <div class="image">
+                            <img onclick="location.href='{{ product.get_absolute_url }}'" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" class="product-image">
+                        </div>
+                        <div class="description">
+                            <h1>{{ product.name }}</h1>
+                            <p class="description-text">{{ product.description }}</p>
+                            <h2>&#8358; {{ item.new_price|intcomma }}</h2>
+                            <div class="quantity-wrapper">
+                                <div>
+                                    <label for="quantity" style="margin-right: 0.5rem;">Quantity: {{ item.quantity }}</label>
+                                </div>
+                                <button type="button" class="btn-remove" data-product-id="{{ product.id }}">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+                
+
+<div class="bag-total">
+    <div class="subtotal">
+        <p class="small">Subtotal:</p>
+        <p class="small">NGN {{ cart.get_total_price|intcomma }}</p>
+    </div>
+    <div class="delivery">
+        <p class="small">Delivery (Standard - 2 working days):<br>
+            <span class="change-delivery">Change delivery method</span>
+        </p>
+        <p class="small">Free</p>
+    </div>
+    <div class="total">
+        <h3>Total:</h3>
+        <h3>NGN {{ cart.get_total_price|intcomma }}</h3>
+    </div>
+
+
+    <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
+        <div>
+          Your order is N2,000
+        </div>
+        <input type="hidden" name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
+        <input type="hidden" name="customer[email]" value="test@mailnator.com" />
+        <input type="hidden" name="customer[name]" value="Ayomide Jimi-Oni" />
+        <input type="hidden" name="tx_ref" value="txref-81123" />
+        <input type="hidden" name="amount" value="2000" />
+        <input type="hidden" name="currency" value="NGN" />
+        <input type="hidden" name="meta[source]" value="docs-html-test" />
+        <br>
+
+                <button type="submit" id="start-payment-button" class="btn-go-checkout" onClick="makePayment(paymentParams['{{ plan.name }}'])">
+                    <i class="fas fa-lock"></i>
+                    {{ plan.pay_button_text }}
+                    <span>Go to Checkout</span>
+                </button>
+        </form>
+        
+        <!-- Separate form for item removal -->
+        <form id="removeForm" method="post" style="display: none;">
+            {% csrf_token %}
+        </form>
+        
+
+	</div>
+</div>
+<div class="bg"></div>
+
+
+
+
+
+
+<script>
+    function createPaymentParams() {
+        // Create payment params which will be sent to Flutterwave upon payment
+       
+        paymentParams['{{ plan.name }}'] = {
+            public_key: pay_button_params.public_key,
+            tx_ref: pay_button_params.tx_ref,
+            amount: '{{ plan.amount }}',
+            currency: '{{ plan.currency }}',
+            redirect_url: pay_button_params.redirect_url,
+            payment_plan: '{{ plan.flw_plan_id }}',
+            customer: {
+                email: '{{ user.email }}',
+                name: '{{ user.first_name }} {{ user.last_name }}',
+            },
+            customizations: {
+                title: '{{ plan.modal_title }}',
+                logo: '{{ plan.modal_logo_url }}',
+            },
+        }
+    }
+    if ('{{ user.is_authenticated }}' === 'True') {
+        createPaymentParams();
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".btn-remove").on("click", function() {
+            var productId = $(this).data("product-id");
+            $("#removeForm").attr("action", "{% url 'cart:cart_remove' 0 %}".replace("0", productId));
+            $("#removeForm").submit();
+        });
+    });
+</script>
+
+<script>
+
+	function submitForm() {
+		document.getElementById("myForm").submit();
+	}
+</script>
+
+{% endblock %}

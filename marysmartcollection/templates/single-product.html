@@ -122,35 +122,35 @@
                 <div class="row">
                     <div class="col-lg-3 col-4 order-1 align-self-center">
                         <div class="logo">
-                            <a href="{% url 'home' %}"><img id="images" src="{% static 'assets/img/logo.png' %}" alt=""></a>
+                            <a href="{% url 'Ecommerce:home' %}"><img id="images" src="{% static 'assets/img/logo.png' %}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 order-3 order-lg-2">
                         <div class="collapse navbar-collapse" id="shop-menu">
                             <ul class="navbar-nav menu-open">
                                 <li class="">
-                                    <a href="{% url 'home' %}">Home </a>
+                                    <a href="{% url 'Ecommerce:home' %}">Home </a>
                                     
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Shop <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         
-                                        <li><a href="{% url 'collection-full' %}">Shop Full</a></li>
+                                        <li><a href="{% url 'Ecommerce:collection-full' %}">Shop Full</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Pages <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="{% url 'blog' %}">Blog</a></li>
-                                        <li><a href="{% url 'single-product' %}">Single Product</a></li>
-                                        <li><a href="{% url 'shoping-cart' %}">Shoping Cart</a></li>
-                                        <li><a href="{% url 'coming-soon' %}">Coming Soon</a></li>
-                                        <li><a href="{% url 'login' %}">Log-In Account</a></li>
+                                        <li><a href="{% url 'Ecommerce:blog' %}">Blog</a></li>
+                                        <li><a href="{% url 'Ecommerce:single-product' %}">Single Product</a></li>
+                                        <li><a href="{% url 'Ecommerce:shoping-cart' %}">Shoping Cart</a></li>
+                                        <li><a href="{% url 'Ecommerce:coming-soon' %}">Coming Soon</a></li>
+                                        <li><a href="{% url 'Ecommerce:login' %}">Log-In Account</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{% url 'about' %}">About Us</a></li>
-                                <li><a href="{% url 'contact' %}">Contact us</a></li>
+                                <li><a href="{% url 'Ecommerce:about' %}">About Us</a></li>
+                                <li><a href="{% url 'Ecommerce:contact' %}">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                                                     <img src="{% static 'assets/img/shop/c1.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title"><a href="{% url 'single-product' %}">Comfortable chair in the scandinavian</a></h6>
+                                                    <h6 class="title"><a href="{% url 'Ecommerce:single-product' %}">Comfortable chair in the scandinavian</a></h6>
                                                     <span class="price">$29.00</span>
                                                 </div>
                                                 <div class="action">
@@ -187,7 +187,7 @@
                                                     <img src="{% static 'assets/img/shop/c2.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title"><a href="{% url 'single-product' %}">Comfortable chair in the scandinavian</a></h6>
+                                                    <h6 class="title"><a href="{% url 'Ecommerce:single-product' %}">Comfortable chair in the scandinavian</a></h6>
                                                     <span class="price">$29.00</span>
                                                 </div>
                                                 <div class="action">
@@ -202,7 +202,7 @@
                                                     <img src="{% static 'assets/img/shop/c3.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title"><a href="{% url 'single-product' %}">Comfortable chair in the scandinavian</a></h6>
+                                                    <h6 class="title"><a href="{% url 'Ecommerce:single-product' %}">Comfortable chair in the scandinavian</a></h6>
                                                     <span class="price">$29.00</span>
                                                 </div>
                                                 <div class="action">
@@ -217,7 +217,7 @@
                                                     <img src="{% static 'assets/img/shop/c4.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title"><a href="{% url 'single-product' %}">Comfortable chair in the scandinavian</a></h6>
+                                                    <h6 class="title"><a href="{% url 'Ecommerce:single-product' %}">Comfortable chair in the scandinavian</a></h6>
                                                     <span class="price">$29.00</span>
                                                 </div>
                                                 <div class="action">
@@ -229,7 +229,7 @@
                                         <li>
                                             <h6 class="tprice"><span>Total price: </span>$3210.00</h6>
                                             <div class="btn-wrapper">
-                                                <a href="{% url 'shoping-cart' %}" class="btn btn-cart">Go to cart</a>
+                                                <a href="{% url 'Ecommerce:shoping-cart' %}" class="btn btn-cart">Go to cart</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -270,8 +270,8 @@
                     <div class="breadcrumb-inner d-flex justify-content-between">
                         <h2 class="page-title">Single Product</h2>
                         <ul class="page-list">
-                            <li><a href="{% url 'home' %}">Home</a></li>
-                            <li><a href="{% url 'single-product' %}">Single Product</a></li>
+                            <li><a href="{% url 'Ecommerce:home' %}">Home</a></li>
+                            <li><a href="{% url 'Ecommerce:single-product' %}">Single Product</a></li>
                         </ul>
                     </div>
                 </div>
@@ -735,8 +735,8 @@
                             <h4 class="widget-title">CATEGORIES</h4>
                             <ul>
                                
-                                <li><a href="{% url 'home' %}">Women</a></li>
-                                <li><a href="{% url 'home' %}">Girls</a></li>
+                                <li><a href="{% url 'Ecommerce:home' %}">Women</a></li>
+                                <li><a href="{% url 'Ecommerce:home' %}">Girls</a></li>
                                
                             </ul>
                         </div>
@@ -746,9 +746,9 @@
                             <h4 class="widget-title">OUR POLICY</h4>
                             <ul>
                                 
-                                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                <li><a href="{% url 'Ecommerce:contact' %}">Contact Us</a></li>
                                
-                                <li><a href="{% url 'login' %}">My Account</a></li>
+                                <li><a href="{% url 'Ecommerce:login' %}">My Account</a></li>
                             </ul>
                         </div>
                     </div>
