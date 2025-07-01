@@ -22,6 +22,15 @@
 
      
 </head>
+
+<style>
+    #images{
+        max-width: 30%;
+        position: absolute;
+        filter: grayscale(100%) brightness(0%) contrast(150%);
+        top: -49px;
+    }
+    </style>
 <body>
 
     <!-- preloader area start -->
@@ -38,7 +47,7 @@
     <!-- search Popup -->
     <div class="body-overlay" id="body-overlay"></div>
     <div class="search-popup" id="search-popup">
-        <form action="https://zwin.io/html/stooon/index.html" class="search-form">
+        <form action="" class="search-form">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search.....">
             </div>
@@ -113,41 +122,35 @@
                 <div class="row">
                     <div class="col-lg-3 col-4 order-1 align-self-center">
                         <div class="logo">
-                            <a href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt=""></a>
+                            <a href="{% url 'Ecommerce:home' %}"><img id="images" src="{% static 'assets/img/logo.png' %}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 order-3 order-lg-2">
                         <div class="collapse navbar-collapse" id="shop-menu">
                             <ul class="navbar-nav menu-open">
-                                <li class="menu-item-has-children">
-                                    <a href="#">Home <i class="fa fa-angle-down"></i></a>
-                                    <ul class="sub-menu">
-                                        
-                                        <li><a href="index-5.html">Home 05</a></li>
-                                    </ul>
+                                <li class="">
+                                    <a href="{% url 'Ecommerce:home' %}">Home </a>
+                                    
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Shop <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                       
-                                        <li><a href="collection-full.html">Shop Full</a></li>
+                                        
+                                        <li><a href="{% url 'Ecommerce:collection-full' %}">Shop Full</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Pages <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <!--<li><a href="blog-details.html">Blog Details</a></li> -->
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="shoping-cart.html">Shoping Cart</a></li>
-                                        <!--<li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="error.html">Error</a></li> -->
-                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                        <li><a href="login.html">Log-In Account</a></li>
+                                        <li><a href="{% url 'Ecommerce:blog' %}">Blog</a></li>
+                                        <li><a href="{% url 'Ecommerce:single-product' %}">Single Product</a></li>
+                                        <li><a href="{% url 'Ecommerce:shoping-cart' %}">Shoping Cart</a></li>
+                                        <li><a href="{% url 'Ecommerce:coming-soon' %}">Coming Soon</a></li>
+                                        <li><a href="{% url 'Ecommerce:login' %}">Log-In Account</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="{% url 'Ecommerce:about' %}">About Us</a></li>
+                                <li><a href="{% url 'Ecommerce:contact' %}">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -169,7 +172,7 @@
                                                     <img src="{% static 'assets/img/shop/c1.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
+                                                    <h6 class="title"><a href="{% url 'Ecommerce:single-product' %}">Comfortable chair in the scandinavian</a></h6>
                                                     <span class="price">$29.00</span>
                                                 </div>
                                                 <div class="action">
@@ -184,7 +187,7 @@
                                                     <img src="{% static 'assets/img/shop/c2.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
+                                                    <h6 class="title"><a href="{% url 'Ecommerce:single-product' %}">Comfortable chair in the scandinavian</a></h6>
                                                     <span class="price">$29.00</span>
                                                 </div>
                                                 <div class="action">
@@ -196,10 +199,10 @@
                                         <li>
                                             <div class="d-flex">
                                                 <div class="thumb">
-                                                    <img src="{% static 'assets/img/shop/c3.png' }" alt="">
+                                                    <img src="{% static 'assets/img/shop/c3.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
+                                                    <h6 class="title"><a href="{% url 'Ecommerce:single-product' %}">Comfortable chair in the scandinavian</a></h6>
                                                     <span class="price">$29.00</span>
                                                 </div>
                                                 <div class="action">
@@ -211,10 +214,10 @@
                                         <li>
                                             <div class="d-flex">
                                                 <div class="thumb">
-                                                    <img src="{% static 'assets/img/shop/c4.png' }" alt="">
+                                                    <img src="{% static 'assets/img/shop/c4.png' %}" alt="">
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
+                                                    <h6 class="title"><a href="{% url 'Ecommerce:single-product' %}">Comfortable chair in the scandinavian</a></h6>
                                                     <span class="price">$29.00</span>
                                                 </div>
                                                 <div class="action">
@@ -226,7 +229,7 @@
                                         <li>
                                             <h6 class="tprice"><span>Total price: </span>$3210.00</h6>
                                             <div class="btn-wrapper">
-                                                <a href="shoping-cart.html" class="btn btn-cart">Go to cart</a>
+                                                <a href="{% url 'Ecommerce:shoping-cart' %}" class="btn btn-cart">Go to cart</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -268,8 +271,8 @@
                         <h2 class="page-title">Contact</h2>
                         <ul class="page-list">
                            
-                            <li><a href="index-5">Home</a></li>
-                            <li><a href="contact">Contact</a></li>
+                            <li><a href="{% url 'Ecommerce:home' %}">Home</a></li>
+                            <li><a href="{% url 'Ecommerce:contact' %}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -334,40 +337,48 @@ src="https://maps.google.com/maps?q=Edmonton%20Alberta%20Canada&t=&z=13&ie=UTF8&
     <!-- contact area end  -->
 
     <!-- contact form start  -->
-    <div class="contact-form text-center padding-top-80 padding-bottom-80">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <form>
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="name" placeholder="Name*">
-                          </div>
-                          <div class="form-group col-md-6">
-                            <input type="number" class="form-control" id="phone" placeholder="Phone*">
-                          </div>
+<div class="contact-form text-center padding-top-80 padding-bottom-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="bfcd3774-63f0-4cd4-bedb-14cae1e688e0">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Name" required>
                         </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <input type="email" class="form-control" id="email" placeholder="Email*">
-                          </div>
-                          <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="topic" placeholder="Topic">
-                          </div>
+                        <div class="form-group col-md-6">
+                            <input type="tel" name="phone" class="form-control" placeholder="Phone" required>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                              <textarea name="message" id="message" rows="8" placeholder="Message"></textarea>
-                            </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
                         </div>
-                        <button type="submit" class="btn btn-contact">Send Message</button>
-                    </form>
-                </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="topic" class="form-control" placeholder="Topic">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <textarea name="message" class="form-control" rows="8" placeholder="Message" required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-contact">Send Message</button>
+
+                    <div id="form-success" style="display: none; color: green; margin-top: 20px;">
+                        ✅ Message sent successfully!
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <!-- contact form end  -->
-
+</div>
+<!-- contact form end  -->
      <!-- instagram start -->
     <div class="instagram-area margin-top-75">
         <div class="container">
@@ -433,7 +444,7 @@ src="https://maps.google.com/maps?q=Edmonton%20Alberta%20Canada&t=&z=13&ie=UTF8&
                             <h4 class="widget-title">OUR POLICY</h4>
                             <ul>
                                 
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="{% url 'Ecommerce:contact' %}">Contact Us</a></li>
                                 
                                 <li><a href="#">My Account</a></li>
                             </ul>
@@ -518,6 +529,32 @@ src="https://maps.google.com/maps?q=Edmonton%20Alberta%20Canada&t=&z=13&ie=UTF8&
     <script src="{% static 'assets/js/vendor.js' %}"></script>
     <!-- main js  -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script>
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('form-success');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: form.method,
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                form.reset();
+                successMsg.style.display = 'block';
+            } else {
+                alert('Something went wrong. Please try again.');
+            }
+        })
+        .catch(error => {
+            alert('Network error. Please try again.');
+        });
+    });
+</script>
     
 </body>
 

@@ -5,7 +5,6 @@ input[type="submit"], button {
     appearance: none;
 }
 
-
 @media (max-width: 1024px) {
     /* Basic */
 
@@ -903,4 +902,3 @@ input[type="submit"], button {
         word-break: break-word;
     }
 }
-

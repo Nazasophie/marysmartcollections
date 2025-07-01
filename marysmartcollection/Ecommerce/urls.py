@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+app_name = "Ecommerce"
+
 urlpatterns = [
     path('', views.home, name='home'),  # Route for homepage
     path('about/', views.about, name='about'),
@@ -11,4 +13,6 @@ urlpatterns = [
     path('shoping-cart/', views.shoping_cart, name='shoping-cart'),
     path('single-product/', views.single_product, name='single-product'),
     path('collection-full/', views.collection_full, name='collection-full'),
-]
+      path('<int:id>/<slug:slug>/', views.product_detail,
+        name = 'product_detail'),
+] 
