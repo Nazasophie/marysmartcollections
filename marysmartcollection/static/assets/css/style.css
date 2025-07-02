@@ -68,6 +68,11 @@ body {
   overflow-x: hidden;
   font-family: var(--body-font); }
 
+  #video-content {
+    background: url('../img/others/video3.png') ;
+    background-repeat: no-repeat;
+    justify-content: center;
+  }
 
   #banner-1 {
     background: url('../img/banner/5.png') no-repeat center center/cover;
