@@ -156,7 +156,30 @@
                     </div>
                     <div class="col-lg-3 col-8 justify-content-end d-flex order-2 order-lg-3">
                         <div class="nav-right-part">
-                            
+                            <ul>
+                                <li>
+                                    <a href="#" id="search"><i class="icon-search"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-heart"></i><span class="badge">2</span></a>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="{% url 'cart:cart_detail' %}"><i class="icon-add-to-cat"></i><span class="badge">{{ cart|length }}</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-user"></i></a>
+                                    <ul class="user-dropdown">
+                                        <li><a href="#">Sign In | Join</a></li>
+                                        <li><a href="#"><i class="icon-user"></i> My Account</a></li>
+                                        <li><a href="#"><i class="fa fa-briefcase"></i> My Orders</a></li>
+                                        <li><a href="#"><i class="fa fa-reply"></i> Returns Information</a></li>
+                                        <li><a href="#"><i class="fa fa-commenting-o"></i> Contact Preferences</a></li>
+                                    </ul>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    <a href="#" id="navigation-button"><i class="icon-bar-icon"></i></a>
+                                </li>
+                            </ul>
                         </div>
                         <div class="responsive-mobile-menu">
                             <div class="menu toggle-btn d-block d-lg-none" data-toggle="collapse" data-target="#shop-menu" aria-expanded="false" role="button">
@@ -331,9 +354,8 @@
                         {% endfor %}
                         
     
-                    </div>
-                    </div>
                 
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between pagination">
