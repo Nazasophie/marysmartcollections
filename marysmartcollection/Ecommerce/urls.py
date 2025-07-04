@@ -5,6 +5,7 @@ app_name = "Ecommerce"
 
 urlpatterns = [
     path('', views.home, name='home'),  # Route for homepage
+    path('single-product/<int:product_id>/', views.single_product, name='single_product'),
     path('about/', views.about, name='about'),
     path('blog/', views.blog, name='blog'),
     path('coming-soon/', views.coming_soon, name='coming-soon'),

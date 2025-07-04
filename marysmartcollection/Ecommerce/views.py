@@ -187,7 +187,7 @@ def contact(request):
 def login(request):
     return render(request, 'login.html', )
 def shoping_cart(request):
-    return render(request, 'cart:cart.html', )
+    return render(request, 'shoping-cart.html', )
 def coming_soon(request):
     return render(request, 'coming-soon.html', )
 def collection_full(request,category_slug=None):
@@ -210,5 +210,14 @@ def collection_full(request,category_slug=None):
     
 
     return render(request, 'collection-full.html', context)
-def single_product(request):
-    return render(request, 'single-product.html', )
+# def single_product(request):
+#     return render(request, 'single-product.html', )
+
+
+def single_product(request, product_id=None):
+    product = get_object_or_404(Product, id=product_id) if product_id else None
+    cart_product_form = CartAddProductForm()
+    return render(request, 'single-product.html', {
+        'product': product,
+        'cart_product_form': cart_product_form
+    })
