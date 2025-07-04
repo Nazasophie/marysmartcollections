@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     'rest_framework',
     'Ecommerce',
+    'members',
     'cart.apps.CartConfig',
 
 ]

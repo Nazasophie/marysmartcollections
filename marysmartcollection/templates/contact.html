@@ -143,10 +143,10 @@
                                     <a href="#">Pages <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{% url 'Ecommerce:blog' %}">Blog</a></li>
-                                        <li><a href="{% url 'Ecommerce:single-product' %}">Single Product</a></li>
+                                        
                                         <li><a href="{% url 'cart:cart_detail' %}">Shoping Cart</a></li>
                                         <li><a href="{% url 'Ecommerce:coming-soon' %}">Coming Soon</a></li>
-                                        <li><a href="{% url 'Ecommerce:login' %}">Log-In Account</a></li>
+                                        <li><a href="{% url 'members:login_user' %}">Log-In Account</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{% url 'Ecommerce:about' %}">About Us</a></li>
@@ -170,7 +170,7 @@
                                     <a href="#"><i class="icon-user"></i></a>
                                     <ul class="user-dropdown">
                                         <li><a href="#">Sign In | Join</a></li>
-                                        <li><a href="#"><i class="icon-user"></i> My Account</a></li>
+                                        <li><a href="{% url 'members:login_user' %}"><i class="icon-user"></i> My Account</a></li>
                                         <li><a href="#"><i class="fa fa-briefcase"></i> My Orders</a></li>
                                         <li><a href="#"><i class="fa fa-reply"></i> Returns Information</a></li>
                                         <li><a href="#"><i class="fa fa-commenting-o"></i> Contact Preferences</a></li>
