@@ -187,8 +187,9 @@ def contact(request):
 def login(request):
     return render(request, 'login.html', )
 def shoping_cart(request):
-    return render(request, 'shoping-cart.html', )
+    return render(request, 'cart:cart.html', )
 def coming_soon(request):
+    
     return render(request, 'coming-soon.html', )
 def collection_full(request,category_slug=None):
     category = None

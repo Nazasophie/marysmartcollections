@@ -133,7 +133,7 @@
                                 </li>
                                 <li>
                                     <a href="#"><i class="icon-user"></i></a>
-                                    <ul class="user-dropdown">
+                                    <ul  class="user-dropdown">
                                         <li><a href="#">Sign In | Join</a></li>
                                         <li><a href="login.html"><i class="icon-user"></i> My Account</a></li>
                                         <li><a href="#"><i class="fa fa-briefcase"></i> My Orders</a></li>
@@ -176,7 +176,7 @@
                                         <ul class="sub-menu">
                                             <li><a href="{% url 'Ecommerce:blog' %}">Blog</a></li>
                                             <li><a href="{% url 'Ecommerce:single-product' %}">Single Product</a></li>
-                                            <li><a href="{% url 'Ecommerce:shoping-cart' %}">Shoping Cart</a></li>
+                                            <li><a href="{% url 'cart:cart_detail' %}">Shoping Cart</a></li>
                                             <li><a href="{% url 'Ecommerce:coming-soon' %}">Coming Soon</a></li>
                                             <li><a href="{% url 'Ecommerce:login' %}">Log-In Account</a></li>
                                         </ul>
@@ -196,7 +196,7 @@
                                         <a href="#"><i class="icon-heart"></i><span class="badge">2</span></a>
                                     </li>
                                     <li class="has-dropdown">
-                                        <a href="#"><i class="icon-add-to-cat"></i><span class="badge">3</span></a>
+                                        <a href="{% url 'cart:cart_detail' %}"><i class="icon-add-to-cat"></i><span class="badge">3</span></a>
                                         
                                     </li>
                                     <li>
