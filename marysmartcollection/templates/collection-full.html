@@ -394,25 +394,25 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="product-style-03 margin-top-40">
                                 <div class="thumb">
-                                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
-                                        static " img/no_image.png" %}{% endif %}" alt="No image">
+                                    <a href="{{ product.get_absolute_url }}"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
+                                        static " img/no_image.png" %}{% endif %}" alt="No image"></a>
                                     <span class="sale">Sale! 13%</span>
                                     <span class="new margin-top-35">New</span>
                                     <ul class="cart-action">
-                                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="icon-add-to-cat"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="icon-heart"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="content text-center">
                                     <span class="brand">Brand: geek</span>
                                     <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
                                     </ul>
-                                    <h6 class="title"><a href="#">{{ product.name }}</a></h6>
+                                    <h6 class="title"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h6>
                                     <div class="content-price d-flex align-self-center justify-content-center">
                                         <span class="new-price">$450.00</span>
                                     </div>
@@ -422,225 +422,7 @@
                         {% endfor %}
                         
     
-                <div class="tab-pane fade list-item" id="two">
-                    <div class="row product-style-03 margin-top-40">
-                        <div class="col-md-4 col-sm-12 col-12">
-                            <div class="thumb">
-                                <img src="{% static 'assets/img/shop/1.png' %}" alt="">
-                            </div>                                        
-                        </div>
-                        <div class="col-md-8 col-sm-12 col-12">
-                            <div class="content">
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                                <ul class="margin-bottom-10">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                <div class="btn-wrapper margin-top-20">
-                                    <div class="add-to-cart">
-                                        <a href="#"><i class="icon-add-to-cat"></i> Add to cart</a>
-                                    </div>
-                                    <div class="add-to-wishlist">
-                                        <a href="#"><i class="icon-heart"></i> Add to Wishlist</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row product-style-03 margin-top-40">
-                        <div class="col-md-4 col-sm-12 col-12">
-                            <div class="thumb">
-                                <img src="{% static 'assets/img/shop/2.png' %}" alt="">
-                            </div>                                        
-                        </div>
-                        <div class="col-md-8 col-sm-12 col-12">
-                            <div class="content">
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                                <ul class="margin-bottom-10">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                <div class="btn-wrapper margin-top-20">
-                                    <div class="add-to-cart">
-                                        <a href="#"><i class="icon-add-to-cat"></i> Add to cart</a>
-                                    </div>
-                                    <div class="add-to-wishlist">
-                                        <a href="#"><i class="icon-heart"></i> Add to Wishlist</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row product-style-03 margin-top-40">
-                        <div class="col-md-4 col-sm-12 col-12">
-                            <div class="thumb">
-                                <img src="{% static 'assets/img/shop/3.png' %}" alt="">
-                            </div>                                        
-                        </div>
-                        <div class="col-md-8 col-sm-12 col-12">
-                            <div class="content">
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                                <ul class="margin-bottom-10">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                <div class="btn-wrapper margin-top-20">
-                                    <div class="add-to-cart">
-                                        <a href="#"><i class="icon-add-to-cat"></i> Add to cart</a>
-                                    </div>
-                                    <div class="add-to-wishlist">
-                                        <a href="#"><i class="icon-heart"></i> Add to Wishlist</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row product-style-03 margin-top-40">
-                        <div class="col-md-4 col-sm-12 col-12">
-                            <div class="thumb">
-                                <img src="{% static 'assets/img/shop/4.png' %}" alt="">
-                            </div>                                        
-                        </div>
-                        <div class="col-md-8 col-sm-12 col-12">
-                            <div class="content">
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                                <ul class="margin-bottom-10">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                <div class="btn-wrapper margin-top-20">
-                                    <div class="add-to-cart">
-                                        <a href="#"><i class="icon-add-to-cat"></i> Add to cart</a>
-                                    </div>
-                                    <div class="add-to-wishlist">
-                                        <a href="#"><i class="icon-heart"></i> Add to Wishlist</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row product-style-03 margin-top-40">
-                        <div class="col-md-4 col-sm-12 col-12">
-                            <div class="thumb">
-                                <img src="{% static 'assets/img/shop/5.png' %}" alt="">
-                            </div>                                        
-                        </div>
-                        <div class="col-md-8 col-sm-12 col-12">
-                            <div class="content">
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                                <ul class="margin-bottom-10">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                <div class="btn-wrapper margin-top-20">
-                                    <div class="add-to-cart">
-                                        <a href="#"><i class="icon-add-to-cat"></i> Add to cart</a>
-                                    </div>
-                                    <div class="add-to-wishlist">
-                                        <a href="#"><i class="icon-heart"></i> Add to Wishlist</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row product-style-03 margin-top-40">
-                        <div class="col-md-4 col-sm-12 col-12">
-                            <div class="thumb">
-                                <img src="{% static 'assets/img/shop/6.png' %}" alt="">
-                            </div>                                        
-                        </div>
-                        <div class="col-md-8 col-sm-12 col-12">
-                            <div class="content">
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                                <ul class="margin-bottom-10">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                <div class="btn-wrapper margin-top-20">
-                                    <div class="add-to-cart">
-                                        <a href="#"><i class="icon-add-to-cat"></i> Add to cart</a>
-                                    </div>
-                                    <div class="add-to-wishlist">
-                                        <a href="#"><i class="icon-heart"></i> Add to Wishlist</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row product-style-03 margin-top-40">
-                        <div class="col-md-4 col-sm-12 col-12">
-                            <div class="thumb">
-                                <img src="{% static 'assets/img/shop/7.png' %}" alt="">
-                            </div>                                        
-                        </div>
-                        <div class="col-md-8 col-sm-12 col-12">
-                            <div class="content">
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                                <ul class="margin-bottom-10">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                <div class="btn-wrapper margin-top-20">
-                                    <div class="add-to-cart">
-                                        <a href="#"><i class="icon-add-to-cat"></i> Add to cart</a>
-                                    </div>
-                                    <div class="add-to-wishlist">
-                                        <a href="#"><i class="icon-heart"></i> Add to Wishlist</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="row">
                 <div class="col-md-12">
