@@ -151,6 +151,7 @@ def search(request,category_slug=None):
         'categories': categories,
         'results': result,
         }
+        
     return render(request, 'result.html',context)
 
 
