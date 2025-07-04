@@ -240,7 +240,7 @@
                                     <div class="right">
                                         <h6 class="name">{{ product.name}}</h6>
                                         <h6 class="title">Size: <span class="values">XL</span></h6>
-                                        <h6 class="title">Color: <span class="values">Brown</span></h6>
+                                        <!-- <h6 class="title">Color: <span class="values">Brown</span></h6> -->
                                     </div>
                                 </th>
                                 <td>{{ item.new_price }}</td>
@@ -248,7 +248,8 @@
                                 <td>${{ cart.get_total_price }}</td>
                                 <td>
                                     <div class="action">
-                                        <a type="button" class="btn-remove" data-product-id="{{ product.id }}"><i class="fa fa-times"></i></a>
+                                        <button type="button" class="btn-remove" data-product-id="{{ product.id }}">Remove</button>
+                                        <!-- <a type="button" class="btn-remove" data-product-id="{{ product.id }}"><i class="fa fa-times"></i></a> -->
                                         <a href="#"><i class="fa fa-pencil"></i></a>
                                     </div>
                                 </td>
@@ -478,6 +479,25 @@
     <script src="{% static 'assets/js/vendor.js' %}"></script>
     <!-- main js  -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".btn-remove").on("click", function() {
+            var productId = $(this).data("product-id");
+            $("#removeForm").attr("action", "{% url 'cart:cart_remove' 0 %}".replace("0", productId));
+            $("#removeForm").submit();
+        });
+    });
+</script>
+
+<script>
+
+	function submitForm() {
+		document.getElementById("myForm").submit();
+	}
+</script>
+
     
 </body>
 
