@@ -30,48 +30,78 @@ from cart.serializers import DRTransactionSerializer
 from cart.utils import create_transaction_ref
 
 
+# yourapp/views.py
+
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
 def cart_add(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
-    form = CartAddProductForm(request.POST)
-    if User is None:
-        return redirect("members:login")
-    else:
+    if request.method == 'POST':
+        form = CartAddProductForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
             cart.add(product=product, quantity=cd['quantity'], override_quantity=cd['override'])
-           
-    return redirect('cart:cart_detail')   
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({'success': True, 'message': 'Product added to cart'})
+        else:
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({'success': False, 'errors': form.errors}, status=400)
+    return redirect('cart:cart_detail')
 
+@login_required
 def cart_remove(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
     cart.remove(product)
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return JsonResponse({'success': True, 'message': 'Product removed from cart'})
     return redirect('cart:cart_detail')
 
-def cart_detail(request,category_slug=None):
+@login_required
+def cart_update(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+    if request.method == 'POST':
+        form = CartAddProductForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            cart.add(product=product, quantity=cd['quantity'], override_quantity=True)
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({'success': True, 'message': 'Cart updated'})
+        else:
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({'success': False, 'errors': form.errors}, status=400)
+    return redirect('cart:cart_detail')
+
+@login_required
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return JsonResponse({'success': True, 'message': 'Cart cleared'})
+    return redirect('cart:cart_detail')
+
+def cart_detail(request, category_slug=None):
+    cart = Cart(request)
     category = None
     categories = Category.objects.all()
-
     products = Product.objects.filter(available=True)
+    
     if category_slug:
-        category = get_object_or_404(Category,
-                                     slug=category_slug)
+        category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
     
-    cart = Cart(request)
-
-
     context = {
-      'cart': cart,
-      'category' : category,
-      'categories': categories,
-      'products': products
-      }
+        'cart': cart,
+        'category': category,
+        'categories': categories,
+        'products': products,
+        'cart_form': CartAddProductForm()
+    }
     return render(request, 'cart/cart.html', context)
-
-
-
 
 UserModel = get_user_model()
 
