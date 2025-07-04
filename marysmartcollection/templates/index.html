@@ -48,9 +48,9 @@
     <!-- search Popup -->
     <div class="body-overlay" id="body-overlay"></div>
     <div class="search-popup" id="search-popup">
-        <form action="" class="search-form">
+        <form action="{% url 'Ecommerce:search' %}" class="search-form">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search.....">
+                <input name="query" type="text" class="form-control" placeholder="Search.....">
             </div>
             <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
         </form>
@@ -238,7 +238,7 @@
                             <h2 class="title color-white" data-animation-in="fadeInRight">FAVOURITE CLOTHING</h2>
                             <div class="margin-top-50 pl-1">
                                 <div class="btn-wrapper" data-animation-in="fadeInDown">
-                                    <a class="btn btn-white" href="#">GET COLLECTION</a>
+                                    <a class="btn btn-white" href="{% url 'Ecommerce:collection-full' %}">GET COLLECTION</a>
                                 </div>
                             </div>
                         </div>
@@ -254,7 +254,7 @@
                             <h2 class="title color-white" data-animation-in="fadeInRight">FAVOURITE CLOTHING</h2>
                             <div class="margin-top-50 pl-1">
                                 <div class="btn-wrapper" data-animation-in="fadeInDown">
-                                    <a class="btn btn-white" href="#">GET COLLECTION</a>
+                                    <a class="btn btn-white" href="{% url 'Ecommerce:collection-full' %}">GET COLLECTION</a>
                                 </div>
                             </div>
                         </div>

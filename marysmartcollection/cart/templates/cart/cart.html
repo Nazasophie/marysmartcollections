@@ -243,7 +243,7 @@
                                                     </div>
                                                     <div class="right">
                                                         <h6 class="name">{{ product.name }}</h6>
-                                                        <h6 class="title">Size: <span class="values">XL</span></h6>
+                                                        <h6 class="title">Size: <span class="values">{{ item.size|default:"N/A" }}</span></h6>
                                                     </div>
                                                 </th>
                                                 <td>${{ item.new_price }}</td>

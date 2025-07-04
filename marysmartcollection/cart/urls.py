@@ -21,7 +21,7 @@ urlpatterns = [
     path('cart/', views.cart_detail, name='cart_detail'),
     path("transaction/", TransactionCreateView.as_view(), name="transaction_create"),
     path("payment-params/", PaymentParamsView.as_view(), name="payment_params"),
-    path("<str:tx_ref>/", TransactionDetailView.as_view(), name="transaction_detail"),
+    # path("<str:tx_ref>/", TransactionDetailView.as_view(), name="transaction_detail"),
     
 
 ]

@@ -79,7 +79,7 @@ class Product(models.Model):
     image2 = models.ImageField(upload_to='category_image//%Y/%m/%d',
                               blank=True)
 
-                              
+    sizes = models.JSONField(default=list, blank=True)
     description = models.TextField(blank=True, max_length=250)
     old_price = CommaSeparatedIntegerField(max_digits=10, decimal_places=0, null=True)
     new_price = models.DecimalField(max_digits=10, decimal_places=0, null=True)

@@ -1,56 +1,70 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model
 from Ecommerce.models import Category, Product
 from .cart import Cart
 from .forms import CartAddProductForm
-from django.contrib.auth.models import User
-from django.http import JsonResponse
-
-
-
-
-# stdlib imports
-
-# django imports
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import get_user_model
-from django.views.generic import TemplateView
-
-# 3rd party imports
 from rest_framework import status
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import CartAddProductForm
-
-# project imports
+from rest_framework.response import Response
+from .serializers import DRTransactionSerializer
+from .models import FlwTransactionModel, FlwPlanModel
+from .utils import create_transaction_ref
 from marysmartcollection import settings
-from cart.models import FlwTransactionModel, FlwPlanModel
-from cart.serializers import DRTransactionSerializer
-from cart.utils import create_transaction_ref
 
+UserModel = get_user_model()
 
-# yourapp/views.py
-
-from django.contrib.auth.decorators import login_required
-
-
+@require_POST
 @login_required
 def cart_add(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
-    if request.method == 'POST':
-        form = CartAddProductForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            cart.add(product=product, quantity=cd['quantity'], override_quantity=cd['override'])
+    print(f"POST data: {request.POST}")  # Debug: Log form data
+    form = CartAddProductForm(request.POST)
+    if form.is_valid():
+        cd = form.cleaned_data
+        print(f"Cleaned data: {cd}")  # Debug: Log cleaned data
+        size = cd.get('size')  # Safely get size to avoid KeyError
+        if not size:
             if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-                return JsonResponse({'success': True, 'message': 'Product added to cart'})
-        else:
-            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-                return JsonResponse({'success': False, 'errors': form.errors}, status=400)
-    return redirect('cart:cart_detail')
+                return JsonResponse({'success': False, 'errors': {'size': ['Please select a size.']}}, status=400)
+            return render(request, 'single-product.html', {
+                'product': product,
+                'cart_product_form': form,
+                'error': 'Please select a size.',
+                'category': product.category,
+                'categories': Category.objects.all()
+            })
+        cart.add(
+            product=product,
+            quantity=cd['quantity'],
+            size=size,
+            override_quantity=cd['update']  # Match Cart class parameter
+        )
+        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            return JsonResponse({
+                'success': True,
+                'message': 'Product added to cart',
+                'total_quantity': cart.__len__()
+            })
+        return redirect('cart:cart_detail')
+    print(f"Form errors: {form.errors}")  # Debug: Log form errors
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return JsonResponse({'success': False, 'errors': form.errors}, status=400)
+    return render(request, 'single-product.html', {
+        'product': product,
+        'cart_product_form': form,
+        'error': form.errors.as_text(),
+        'category': product.category,
+        'categories': Category.objects.all()
+    })
 
+@require_POST
 @login_required
 def cart_remove(request, product_id):
     cart = Cart(request)
@@ -60,22 +74,42 @@ def cart_remove(request, product_id):
         return JsonResponse({'success': True, 'message': 'Product removed from cart'})
     return redirect('cart:cart_detail')
 
+@require_POST
 @login_required
 def cart_update(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
-    if request.method == 'POST':
-        form = CartAddProductForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            cart.add(product=product, quantity=cd['quantity'], override_quantity=True)
-            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-                return JsonResponse({'success': True, 'message': 'Cart updated'})
-        else:
-            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-                return JsonResponse({'success': False, 'errors': form.errors}, status=400)
-    return redirect('cart:cart_detail')
+    print(f"POST data: {request.POST}")  # Debug
+    form = CartAddProductForm(request.POST)
+    if form.is_valid():
+        cd = form.cleaned_data
+        print(f"Cleaned data: {cd}")  # Debug
+        size = cd.get('size')  # Include size for consistency
+        cart.add(
+            product=product,
+            quantity=cd['quantity'],
+            size=size,
+            override_quantity=True
+        )
+        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            return JsonResponse({
+                'success': True,
+                'message': 'Cart updated',
+                'total_quantity': cart.__len__()
+            })
+        return redirect('cart:cart_detail')
+    print(f"Form errors: {form.errors}")  # Debug
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return JsonResponse({'success': False, 'errors': form.errors}, status=400)
+    return render(request, 'single-product.html', {
+        'product': product,
+        'cart_product_form': form,
+        'error': form.errors.as_text(),
+        'category': product.category,
+        'categories': Category.objects.all()
+    })
 
+@require_POST
 @login_required
 def cart_clear(request):
     cart = Cart(request)
@@ -103,16 +137,11 @@ def cart_detail(request, category_slug=None):
     }
     return render(request, 'cart/cart.html', context)
 
-UserModel = get_user_model()
-
-
-class TransactionDetailView(LoginRequiredMixin, TemplateView):
+class TransactionDetailView(LoginRequiredMixin ):
     """Returns a transaction template"""
-
     template_name = "djangoflutterwave/transaction.html"
 
     def get_context_data(self, **kwargs):
-        """Add transaction to context data"""
         kwargs = super().get_context_data(**kwargs)
         try:
             kwargs["transaction"] = FlwTransactionModel.objects.get(
@@ -122,17 +151,13 @@ class TransactionDetailView(LoginRequiredMixin, TemplateView):
             kwargs["transaction"] = None
         return kwargs
 
-
 class TransactionCreateView(CreateAPIView):
-    """Api end point to create transactions. This is used as a webhook called by
-    Flutterwave."""
-
+    """Api end point to create transactions. This is used as a webhook called by Flutterwave."""
     queryset = FlwTransactionModel.objects.all()
     serializer_class = DRTransactionSerializer
     authentication_classes: list = []
 
     def create(self, request, *args, **kwargs):
-        """Override create to specify request.data['data'] for serializer data"""
         serializer = self.get_serializer(data=request.data.get("data", None))
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
@@ -142,8 +167,6 @@ class TransactionCreateView(CreateAPIView):
         )
 
     def perform_create(self, serializer: DRTransactionSerializer) -> None:
-        """Add plan and user to Transaction instance, determined from the received
-        reference"""
         reference = serializer.validated_data["tx_ref"]
         plan_id = reference.split("__")[0]
         user_id = reference.split("__")[2]
@@ -152,16 +175,11 @@ class TransactionCreateView(CreateAPIView):
             plan=FlwPlanModel.objects.get(id=plan_id),
         )
 
-
 class PaymentParamsView(APIView):
-    """Api view for retrieving params required when submiting a payment request to
-    Flutterwave. End point can be used by SPA's instead of using template payment
-    button."""
-
+    """Api view for retrieving params required when submitting a payment request to Flutterwave."""
     permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
-        """Return params based on provided plan name"""
         try:
             plan = FlwPlanModel.objects.get(name=request.GET.get("plan", None))
         except FlwPlanModel.DoesNotExist:

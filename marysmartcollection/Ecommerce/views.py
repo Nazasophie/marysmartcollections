@@ -150,8 +150,9 @@ def search(request,category_slug=None):
         'category' : category,
         'categories': categories,
         'results': result,
+        'query': query,
         }
-        
+
     return render(request, 'result.html',context)
 
 

@@ -16,28 +16,36 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <!-- responsive Stylesheet -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
      
 </head>
+<style>
+    #images{
+        max-width: 30%;
+        position: absolute;
+        filter: grayscale(100%) brightness(0%) contrast(150%);
+        top: -49px;
+    }
+    </style>
 <body>
 
     <!-- preloader area start -->
-    <div class="preloader" id="preloader">
+    <!-- <div class="preloader" id="preloader">
         <div class="preloader-inner">
             <div class="spinner">
                 <div class="dot1"></div>
                 <div class="dot2"></div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- preloader area end -->
 
     <!-- search Popup -->
     <div class="body-overlay" id="body-overlay"></div>
     <div class="search-popup" id="search-popup">
-        <form action="https://zwin.io/html/stooon/index.html" class="search-form">
+        <form action="{% url 'Ecommerce:search' %}" class="search-form">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search.....">
+                <input name="query" type="text" class="form-control" placeholder="Search.....">
             </div>
             <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
         </form>
@@ -49,7 +57,7 @@
         <button class="sidebar-menu-close">X</button>
         <div class="sidebar-inner">
             <div class="sidebar-logo">
-                <img src="assets/img/logo.png" alt="">
+                <img id="images" src="assets/img/logo.png" alt="">
             </div>
             <div class="sidemenu-text">
                 <p>We believe brand interaction is key in commu- nication. Real inno vations and a positive customer experience are the heart of successful commu- nication.</p>
@@ -78,12 +86,12 @@
 
     <!-- navbar start -->
     <div class="stoon-navbar">
-        <div class="header-top d-none d-lg-block">
+        <div class="header-top d-none d-sm-block">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-8">
                         <div class="contact">
-                            <a href="tel:+496170961709"><i class="icon-call-header"></i> +1(780)8632797</a>
+                            <a href="tel:+(1780)8632797"><i class="icon-call-header"></i> +1(780)8632797</a>
                             <a href="#"><i class="icon-email-subscribe"></i> Marysmartcollections@gmail.com</a>
                         </div>
                     </div>
@@ -92,39 +100,11 @@
                             <p>FREE SHIPPING - <span>on all orders over $35*</span></p>
                         </div>
                     </div>
-                    <div class="col-lg-4 d-none d-lg-block">
-                        <div class="right-nav-02 text-right">
-                            <ul>
-                                <li>
-                                    <div class="select-menu">
-                                        <select class="menu-select">
-                                            <option>English</option>
-                                            <option>Bangali</option>
-                                        </select>
-                                        <i class="fa fa-chevron-down"></i>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="select-menu">
-                                        <select class="menu-select">
-                                            <option>USD</option>
-                                            <option>GBP</option>
-                                            <option>AUD</option>
-                                            <option>CAD</option>
-                                        </select>
-                                        <i class="fa fa-chevron-down"></i>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icon-user"></i></a>
-                                    <ul class="user-dropdown">
-                                        <li><a href="#">Sign In | Join</a></li>
-                                        <li><a href="#"><i class="icon-user"></i> My Account</a></li>
-                                        <li><a href="#"><i class="fa fa-briefcase"></i> My Orders</a></li>
-                                        <li><a href="#"><i class="fa fa-reply"></i> Returns Information</a></li>
-                                        <li><a href="#"><i class="fa fa-commenting-o"></i> Contact Preferences</a></li>
-                                    </ul>
-                                </li>
+                    <div class="col-lg-4 col-4">
+                        <div class="social">
+                            <ul class="nav-social justify-content-end">
+                               <li><a href="https://vm.tiktok.com/ZMSjn3ey1/"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                 <li><a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"><i class="icon-instagram"></i> Instagram</a></li>
                             </ul>
                         </div>
                     </div>
@@ -134,50 +114,42 @@
         <nav class="navbar navbar-area navbar-expand-lg nav-style-01">
             <div class="container-fluid nav-container">
                 <div class="row">
-                    <div class="col-lg-2 col-xl-2 col-4 order-2 align-self-center text-lg-center">
+                    <div class="col-lg-3 col-4 order-1 align-self-center">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+                            <a href="{% url 'Ecommerce:home' %}"><img id="images" src="{% static 'assets/img/logo.png' %}" alt=""></a>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-xl-5 order-3 order-lg-1">
+                    <div class="col-lg-6 order-3 order-lg-2">
                         <div class="collapse navbar-collapse" id="shop-menu">
-                            <ul class="navbar-nav menu-open text-left">
-                                <li class="menu-item-has-children">
-                                    <a href="#">Home <i class="fa fa-angle-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index.html">Home 01</a></li>
-                                        <li><a href="index-2.html">Home 02</a></li>
-                                        <li><a href="index-3.html">Home 03</a></li>
-                                        <li><a href="index-4.html">Home 04</a></li>
-                                        <li><a href="index-5.html">Home 05</a></li>
-                                    </ul>
+                            <ul class="navbar-nav menu-open">
+                                <li class="">
+                                    <a href="{% url 'Ecommerce:home' %}">Home </a>
+                                    
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Shop <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                       
-                                        <li><a href="collection-full.html">Shop Full</a></li>
+                                        
+                                        <li><a href="{% url 'Ecommerce:collection-full' %}">Shop Full</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Pages <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="blog.html">Blog</a></li>
-                                       
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="shoping-cart.html">Shoping Cart</a></li>
+                                        <li><a href="{% url 'Ecommerce:blog' %}">Blog</a></li>
                                         
-                                       
-                                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                                        <li><a href="{% url 'cart:cart_detail' %}">Shoping Cart</a></li>
+                                        <li><a href="{% url 'Ecommerce:coming-soon' %}">Coming Soon</a></li>
+                                        <li><a href="{% url 'members:login_user' %}">Log-In Account</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="{% url 'Ecommerce:about' %}">About Us</a></li>
+                                <li><a href="{% url 'Ecommerce:contact' %}">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-xl-5 col-8 justify-content-end d-flex order-2 order-lg-3">
-                        <div class="nav-right-part nav-right-part-02">
+                    <div class="col-lg-3 col-8 justify-content-end d-flex order-2 order-lg-3">
+                        <div class="nav-right-part">
                             <ul>
                                 <li>
                                     <a href="#" id="search"><i class="icon-search"></i></a>
@@ -186,75 +158,20 @@
                                     <a href="#"><i class="icon-heart"></i><span class="badge">2</span></a>
                                 </li>
                                 <li class="has-dropdown">
-                                    <a href="#"><i class="icon-add-to-cat"></i><span class="badge">3</span></a>
-                                    <ul>
-                                        <li>
-                                            <div class="d-flex">
-                                                <div class="thumb">
-                                                    <img src="assets/img/shop/c1.png" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
-                                                    <span class="price">$29.00</span>
-                                                </div>
-                                                <div class="action">
-                                                    <input type="number" value="1">
-                                                    <a href="#" class="remove">Remove</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="d-flex">
-                                                <div class="thumb">
-                                                    <img src="assets/img/shop/c2.png" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
-                                                    <span class="price">$29.00</span>
-                                                </div>
-                                                <div class="action">
-                                                    <input type="number" value="1">
-                                                    <a href="#" class="remove">Remove</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="d-flex">
-                                                <div class="thumb">
-                                                    <img src="assets/img/shop/c3.png" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
-                                                    <span class="price">$29.00</span>
-                                                </div>
-                                                <div class="action">
-                                                    <input type="number" value="1">
-                                                    <a href="#" class="remove">Remove</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="d-flex">
-                                                <div class="thumb">
-                                                    <img src="assets/img/shop/c4.png" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h6 class="title"><a href="single-product.html">Comfortable chair in the scandinavian</a></h6>
-                                                    <span class="price">$29.00</span>
-                                                </div>
-                                                <div class="action">
-                                                    <input type="number" value="1">
-                                                    <a href="#" class="remove">Remove</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <h6 class="tprice"><span>Total price: </span>$3210.00</h6>
-                                            <div class="btn-wrapper">
-                                                <a href="shoping-cart.html" class="btn btn-cart">Go to cart</a>
-                                            </div>
-                                        </li>
+                                    <a href="{% url 'cart:cart_detail' %}"><i class="icon-add-to-cat"></i><span class="badge">{{ cart|length }}</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-user"></i></a>
+                                    <ul class="user-dropdown">
+                                        <li><a href="#">Sign In | Join</a></li>
+                                        <li><a href="{% url 'members:login_user' %}"><i class="icon-user"></i> My Account</a></li>
+                                        <li><a href="#"><i class="fa fa-briefcase"></i> My Orders</a></li>
+                                        <li><a href="#"><i class="fa fa-reply"></i> Returns Information</a></li>
+                                        <li><a href="#"><i class="fa fa-commenting-o"></i> Contact Preferences</a></li>
                                     </ul>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    <a href="#" id="navigation-button"><i class="icon-bar-icon"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -272,78 +189,11 @@
     <!-- navbar end -->
 
     <!-- banner start -->
-    <div class="banner-style-04">                
-        <div class="banner-slider">
-            <div>
-                <div class="banner__bg2 d-flex align-items-center" style="background: url('assets/img/banner/4.png') no-repeat top center/cover">
-                    <div class="container-fluid px-5">
-                        <div class="banner-content">
-                            <h3 class="subtitle" data-animation-in="fadeInLeft">Winter / 2020</h3>
-                            <h2 class="title" data-animation-in="fadeInRight">Youngest Gestation <br>Casual Supercool</h2>
-                            <div class="margin-top-50 pl-1">
-                                <div class="btn-wrapper" data-animation-in="fadeInDown">
-                                    <a class="btn btn-white" href="#">GET COLLECTION</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="banner__bg2 d-flex align-items-center" style="background: url('assets/img/banner/44.png') no-repeat top center/cover">
-                    <div class="container-fluid px-5">
-                        <div class="banner-content">
-                            <h3 class="subtitle" data-animation-in="fadeInLeft">Winter / 2020</h3>
-                            <h2 class="title" data-animation-in="fadeInRight">Youngest Gestation <br>Casual Supercool</h2>
-                            <div class="margin-top-50 pl-1">
-                                <div class="btn-wrapper" data-animation-in="fadeInDown">
-                                    <a class="btn btn-white" href="#">GET COLLECTION</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- banner end -->
 
     <!-- collection banner start  -->
-    <div class="collection-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="collection-style-03 margin-top-20">
-                        <div class="thumb">
-                            <img src="assets/img/collection/9.png" alt="">
-                            <div class="content">
-                                <h3>CLOTHING'S</h3>
-                                <h6>Collection</h6>
-                                <div class="btn-wrapper">
-                                    <a href="#" class="btn">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="collection-style-03 margin-top-20">
-                        <div class="thumb">
-                            <img src="assets/img/collection/10.png" alt="">
-                            <div class="content">
-                                <h3>ACCESSORIES</h3>
-                                <h6>Collection</h6>
-                                <div class="btn-wrapper">
-                                    <a href="#" class="btn">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- collection area end  -->
 
     <!-- arrivals area start  -->
@@ -352,282 +202,72 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
-                        <h3>NEW ARRIVALS</h3>
+                        <h3>RESULTS</h3>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-01 margin-top-40">
-                        <div class="thumb">
-                            <div class="thumb-slider">
-                                <a href="single-product.html"><img src="assets/img/arrival/1.png" alt=""></a>
-                                <a href="single-product.html"><img src="assets/img/arrival/1.png" alt=""></a>
-                            </div>
-                            <ul class="cart-action">
-                                <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content text-center">
-                            <div class="content-hover d-flex justify-content-between">
-                                <ul class="product-color">
-                                    <li><a href="#"><span class="blue"></span></a></li>
-                                    <li><a href="#"><span class="red"></span></a></li>
-                                    <li><a href="#"><span class="pest"></span></a></li>
-                                    <li><a href="#"><span class="yellow"></span></a></li>
-                                    <li><a href="#"><span class="ass"></span></a></li>
-                                </ul>
-                                <ul class="product-size">
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li><a href="#">L</a></li>
-                                </ul>
-                            </div>
-                            <div class="content-bottom">
-                                <span class="brand">BRAND:GEEK</span>
-                                <ul class="justify-content-center margin-bottom-20">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center justify-content-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                            </div>
+            {% if results %}
+
+        <h3>Search Results: {{ query }}</h3>
+
+        {% for re in results %}
+        <!-- <div class="prod">
+            <img src="{{ re.image.url }}" alt="" />
+            <h3>{{ re.name }}</h3>
+            <p><strong>&#8358; {{ re.new_price }}</strong></p>
+            <p><del><sub style="color: black;">&#8358; {{ re.old_price }}</sub></del></p>
+            <button id="cart" style="cursor: pointer;" onclick="location.href='{{ re.get_absolute_url }}'">Add to Cart</button>
+        </div> -->
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="product-style-01 margin-top-40">
+                <div class="thumb">
+                    <div class="thumb-slider">
+                        <!-- <a href="{{ re.image.url }}"><img src="{{ re.image.url }}" alt=""></a> -->
+                        <a href="{{ re.image.url }}"><img src="{{ re.image.url }}" alt=""></a>
+                    </div>
+                    <ul class="cart-action">
+                        <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
+                        <li><a href="#"><i class="icon-heart"></i></a></li>
+                    </ul>
+                </div>
+                <div class="content text-center">
+                    <div class="content-hover d-flex justify-content-between">
+                        <ul class="product-color">
+                            <li><a href="#"><span class="blue"></span></a></li>
+                            <li><a href="#"><span class="red"></span></a></li>
+                            <li><a href="#"><span class="pest"></span></a></li>
+                            <li><a href="#"><span class="yellow"></span></a></li>
+                            <li><a href="#"><span class="ass"></span></a></li>
+                        </ul>
+                        <ul class="product-size">
+                            <li><a href="#">S</a></li>
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">L</a></li>
+                        </ul>
+                    </div>
+                    <div class="content-bottom">
+                        <span class="brand">BRAND:MS Collection</span>
+                        <ul class="justify-content-center margin-bottom-20">
+                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                            <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                            <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                        </ul>
+                        <h6 class="title"><a href="#">{{ re.name }}</a></h6>
+                        <div class="content-price d-flex align-self-center justify-content-center">
+                            <span class="new-price">${{ re.new_price }}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-01 margin-top-40">
-                        <div class="thumb">
-                            <div class="thumb-slider">
-                                <a href="single-product.html"><img src="assets/img/arrival/2.png" alt=""></a>
-                                <a href="single-product.html"><img src="assets/img/arrival/2.png" alt=""></a>
-                            </div>
-                            <span class="sale">SALE! 13%</span>
-                            <span class="new margin-top-35">NEW</span>
-                            <ul class="cart-action">
-                                <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content text-center">
-                            <div class="content-hover d-flex justify-content-between">
-                                <ul class="product-color">
-                                    <li><a href="#"><span class="blue"></span></a></li>
-                                    <li><a href="#"><span class="red"></span></a></li>
-                                    <li><a href="#"><span class="pest"></span></a></li>
-                                    <li><a href="#"><span class="yellow"></span></a></li>
-                                    <li><a href="#"><span class="ass"></span></a></li>
-                                </ul>
-                                <ul class="product-size">
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li><a href="#">L</a></li>
-                                </ul>
-                            </div>
-                            <div class="content-bottom">
-                                <span class="brand">BRAND:GEEK</span>
-                                <ul class="justify-content-center margin-bottom-20">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center justify-content-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-01 margin-top-40">
-                        <div class="thumb">
-                            <div class="thumb-slider">
-                                <a href="single-product.html"><img src="assets/img/arrival/3.png" alt=""></a>
-                                <a href="single-product.html"><img src="assets/img/arrival/3.png" alt=""></a>
-                            </div>
-                            <span class="new">NEW</span>
-                            <ul class="cart-action">
-                                <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content text-center">
-                            <div class="content-hover d-flex justify-content-between">
-                                <ul class="product-color">
-                                    <li><a href="#"><span class="blue"></span></a></li>
-                                    <li><a href="#"><span class="red"></span></a></li>
-                                    <li><a href="#"><span class="pest"></span></a></li>
-                                    <li><a href="#"><span class="yellow"></span></a></li>
-                                    <li><a href="#"><span class="ass"></span></a></li>
-                                </ul>
-                                <ul class="product-size">
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li><a href="#">L</a></li>
-                                </ul>
-                            </div>
-                            <div class="content-bottom">
-                                <span class="brand">BRAND:GEEK</span>
-                                <ul class="justify-content-center margin-bottom-20">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center justify-content-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-01 margin-top-40">
-                        <div class="thumb">
-                            <div class="thumb-slider">
-                                <a href="single-product.html"><img src="assets/img/arrival/4.png" alt=""></a>
-                                <a href="single-product.html"><img src="assets/img/arrival/4.png" alt=""></a>
-                            </div>
-                            <span class="out">SOLD OUT</span>
-                            <ul class="cart-action">
-                                <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content text-center">
-                            <div class="content-hover d-flex justify-content-between">
-                                <ul class="product-color">
-                                    <li><a href="#"><span class="blue"></span></a></li>
-                                    <li><a href="#"><span class="red"></span></a></li>
-                                    <li><a href="#"><span class="pest"></span></a></li>
-                                    <li><a href="#"><span class="yellow"></span></a></li>
-                                    <li><a href="#"><span class="ass"></span></a></li>
-                                </ul>
-                                <ul class="product-size">
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li><a href="#">L</a></li>
-                                </ul>
-                            </div>
-                            <div class="content-bottom">
-                                <span class="brand">BRAND:GEEK</span>
-                                <ul class="justify-content-center margin-bottom-20">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center justify-content-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-01 margin-top-40">
-                        <div class="thumb">
-                            <div class="thumb-slider">
-                                <a href="single-product.html"><img src="assets/img/arrival/5.png" alt=""></a>
-                                <a href="single-product.html"><img src="assets/img/arrival/5.png" alt=""></a>
-                            </div>
-                            <ul class="cart-action">
-                                <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content text-center">
-                            <div class="content-hover d-flex justify-content-between">
-                                <ul class="product-color">
-                                    <li><a href="#"><span class="blue"></span></a></li>
-                                    <li><a href="#"><span class="red"></span></a></li>
-                                    <li><a href="#"><span class="pest"></span></a></li>
-                                    <li><a href="#"><span class="yellow"></span></a></li>
-                                    <li><a href="#"><span class="ass"></span></a></li>
-                                </ul>
-                                <ul class="product-size">
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li><a href="#">L</a></li>
-                                </ul>
-                            </div>
-                            <div class="content-bottom">
-                                <span class="brand">BRAND:GEEK</span>
-                                <ul class="justify-content-center margin-bottom-20">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center justify-content-center">
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-01 margin-top-40">
-                        <div class="thumb">
-                            <div class="thumb-slider">
-                                <a href="single-product.html"><img src="assets/img/arrival/6.png" alt=""></a>
-                                <a href="single-product.html"><img src="assets/img/arrival/6.png" alt=""></a>
-                            </div>
-                            <ul class="cart-action">
-                                <li><a href="#"><i class="icon-add-to-cat"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                            <span class="sale">SALE! 13%</span>
-                            <div class="product-countdown clockdiv" data-countdown="2021/09/02"></div>
-                        </div>
-                        <div class="content text-center">
-                            <div class="content-hover d-flex justify-content-between">
-                                <ul class="product-color">
-                                    <li><a href="#"><span class="blue"></span></a></li>
-                                    <li><a href="#"><span class="red"></span></a></li>
-                                    <li><a href="#"><span class="pest"></span></a></li>
-                                    <li><a href="#"><span class="yellow"></span></a></li>
-                                    <li><a href="#"><span class="ass"></span></a></li>
-                                </ul>
-                                <ul class="product-size">
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li><a href="#">L</a></li>
-                                </ul>
-                            </div>
-                            <div class="content-bottom">
-                                <span class="brand">BRAND:GEEK</span>
-                                <ul class="justify-content-center margin-bottom-20">
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                                </ul>
-                                <h6 class="title"><a href="#">Faxon Canvas Low-Top Sneaker</a></h6>
-                                <div class="content-price d-flex align-self-center justify-content-center">
-                                    <span class="old-price mr-2">$400.00</span>
-                                    <span class="new-price">$450.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+            <br>
+            <h3 id="failure">No search results found for "{{ query }}"</h3>
+        {% endif %}
+            
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -1588,9 +1228,9 @@
     <!-- back to top area end -->
 
     <!-- all plugins here -->
-    <script src="assets/js/vendor.js"></script>
+    <script src="{% static 'assets/js/vendor.js' %}"></script>
     <!-- main js  -->
-    <script src="assets/js/main.js"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
     
 </body>
 
