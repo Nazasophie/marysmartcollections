@@ -164,8 +164,7 @@
                                     <a href="#"><i class="icon-heart"></i><span class="badge">2</span></a>
                                 </li>
                                 <li class="has-dropdown">
-                                    <a href="{% url 'cart:cart_detail' %}"><i class="icon-add-to-cat"></i><span class="badge">3</span></a>
-                                    
+                                    <a href="{% url 'cart:cart_detail' %}"><i class="icon-add-to-cat"></i><span class="badge">{{ cart|length }}</span></a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="icon-user"></i></a>
