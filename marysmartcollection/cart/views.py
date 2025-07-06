@@ -16,7 +16,7 @@ from .serializers import DRTransactionSerializer
 from .models import FlwTransactionModel, FlwPlanModel
 from .utils import create_transaction_ref
 from marysmartcollection import settings
-from square.client import Client
+# from square.client import C   lient
 import uuid
 
 # ... (existing imports and views)

@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stooon - Fashion eCommerce HTML Template</title>
     <!-- favicon -->
-  <link rel=icon href="{% static 'assets/img/favicon.png' %}" sizes="20x20" type="image/png">
+    <link rel=icon href="{% static 'assets/img/favicon.png' %}" sizes="20x20" type="image/png">
     <!-- Vendor Stylesheet -->
     <link rel="stylesheet" href="{% static 'assets/css/vendor.css' %}">
     <!-- Main Stylesheet -->
@@ -21,17 +21,18 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-     
+
 </head>
 
 <style>
-    #images{
+    #images {
         max-width: 30%;
         position: absolute;
         filter: grayscale(100%) brightness(0%) contrast(150%);
         top: -49px;
     }
-    </style>
+</style>
+
 <body>
 
     <!-- preloader area start -->
@@ -65,7 +66,8 @@
                 <img src="{% static 'assets/img/logo.png' %}" alt="">
             </div>
             <div class="sidemenu-text">
-                <p>We believe brand interaction is key in commu- nication. Real inno vations and a positive customer experience are the heart of successful commu- nication.</p>
+                <p>We believe brand interaction is key in commu- nication. Real inno vations and a positive customer
+                    experience are the heart of successful commu- nication.</p>
             </div>
             <div class="sidebar-contact">
                 <h4>Contact Us</h4>
@@ -81,9 +83,10 @@
             </div>
             <div class="social-link">
                 <ul>
-                     
-                 <li><a href="https://vm.tiktok.com/ZMSjn3ey1/"><i class="fab fa-tiktok"></i> TikTok</a></li>
-                 <li><a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"><i class="icon-instagram"></i> Instagram</a></li>
+
+                    <li><a href="https://vm.tiktok.com/ZMSjn3ey1/"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    <li><a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"><i
+                                class="icon-instagram"></i> Instagram</a></li>
                 </ul>
             </div>
         </div>
@@ -109,8 +112,10 @@
                     <div class="col-lg-4 col-4">
                         <div class="social">
                             <ul class="nav-social justify-content-end">
-                               <li><a href="https://vm.tiktok.com/ZMSjn3ey1/"><i class="fab fa-tiktok"></i> TikTok</a></li>
-                 <li><a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"><i class="icon-instagram"></i> Instagram</a></li>
+                                <li><a href="https://vm.tiktok.com/ZMSjn3ey1/"><i class="fab fa-tiktok"></i> TikTok</a>
+                                </li>
+                                <li><a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"><i
+                                            class="icon-instagram"></i> Instagram</a></li>
                             </ul>
                         </div>
                     </div>
@@ -122,7 +127,8 @@
                 <div class="row">
                     <div class="col-lg-3 col-4 order-1 align-self-center">
                         <div class="logo">
-                            <a href="{% url 'Ecommerce:home' %}"><img id="images" src="{% static 'assets/img/logo.png' %}" alt=""></a>
+                            <a href="{% url 'Ecommerce:home' %}"><img id="images"
+                                    src="{% static 'assets/img/logo.png' %}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 order-3 order-lg-2">
@@ -130,12 +136,12 @@
                             <ul class="navbar-nav menu-open">
                                 <li class="">
                                     <a href="{% url 'Ecommerce:home' %}">Home </a>
-                                    
+
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Shop <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        
+
                                         <li><a href="{% url 'Ecommerce:collection-full' %}">Shop Full</a></li>
                                     </ul>
                                 </li>
@@ -143,7 +149,7 @@
                                     <a href="#">Pages <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{% url 'Ecommerce:blog' %}">Blog</a></li>
-                                        
+
                                         <li><a href="{% url 'cart:cart_detail' %}">Shoping Cart</a></li>
                                         <li><a href="{% url 'Ecommerce:coming-soon' %}">Coming Soon</a></li>
                                         <li><a href="{% url 'members:login_user' %}">Log-In Account</a></li>
@@ -164,13 +170,15 @@
                                     <a href="#"><i class="icon-heart"></i><span class="badge">2</span></a>
                                 </li>
                                 <li class="has-dropdown">
-                                    <a href="{% url 'cart:cart_detail' %}"><i class="icon-add-to-cat"></i><span class="badge">{{ cart|length }}</span></a>
+                                    <a href="{% url 'cart:cart_detail' %}"><i class="icon-add-to-cat"></i><span
+                                            class="badge">{{ cart|length }}</span></a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="icon-user"></i></a>
                                     <ul class="user-dropdown">
                                         <li><a href="#">Sign In | Join</a></li>
-                                        <li><a href="{% url 'members:login_user' %}"><i class="icon-user"></i> My Account</a></li>
+                                        <li><a href="{% url 'members:login_user' %}"><i class="icon-user"></i> My
+                                                Account</a></li>
                                         <li><a href="#"><i class="fa fa-briefcase"></i> My Orders</a></li>
                                         <li><a href="#"><i class="fa fa-reply"></i> Returns Information</a></li>
                                         <li><a href="#"><i class="fa fa-commenting-o"></i> Contact Preferences</a></li>
@@ -182,7 +190,8 @@
                             </ul>
                         </div>
                         <div class="responsive-mobile-menu">
-                            <div class="menu toggle-btn d-block d-lg-none" data-toggle="collapse" data-target="#shop-menu" aria-expanded="false" role="button">
+                            <div class="menu toggle-btn d-block d-lg-none" data-toggle="collapse"
+                                data-target="#shop-menu" aria-expanded="false" role="button">
                                 <div class="icon-left"></div>
                                 <div class="icon-right"></div>
                             </div>
@@ -228,23 +237,27 @@
                                                 <h4 class="margin-bottom-30">Product Categories</h4>
                                                 <form action="#">
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                      <input type="checkbox" class="custom-control-input">
-                                                      <label class="custom-control-label" for="tcustomCheck9">Boys [203]</label>
+                                                        <input type="checkbox" class="custom-control-input">
+                                                        <label class="custom-control-label" for="tcustomCheck9">Boys
+                                                            [203]</label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                      <input type="checkbox" class="custom-control-input">
-                                                      <label class="custom-control-label" for="tcustomCheck10">Girls [87]</label>
+                                                        <input type="checkbox" class="custom-control-input">
+                                                        <label class="custom-control-label" for="tcustomCheck10">Girls
+                                                            [87]</label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                      <input type="checkbox" class="custom-control-input">
-                                                      <label class="custom-control-label" for="tcustomCheck11">Men [2869]</label>
+                                                        <input type="checkbox" class="custom-control-input">
+                                                        <label class="custom-control-label" for="tcustomCheck11">Men
+                                                            [2869]</label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                      <input type="checkbox" class="custom-control-input">
-                                                      <label class="custom-control-label" for="tcustomCheck12">Women [1387]</label>
+                                                        <input type="checkbox" class="custom-control-input">
+                                                        <label class="custom-control-label" for="tcustomCheck12">Women
+                                                            [1387]</label>
                                                     </div>
                                                 </form>
-                                            </div>        
+                                            </div>
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-sm-3">
                                             <div class="widget color-widget border-0">
@@ -265,15 +278,15 @@
                                                 <h4 class="margin-bottom-30">Price</h4>
                                                 <form action="#">
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                      <input type="checkbox" class="custom-control-input">
-                                                      <label class="custom-control-label" for="p1">$30-$60</label>
+                                                        <input type="checkbox" class="custom-control-input">
+                                                        <label class="custom-control-label" for="p1">$30-$60</label>
                                                     </div>
                                                     <div class="custom-control custom-checkbox mb-3">
-                                                      <input type="checkbox" class="custom-control-input">
-                                                      <label class="custom-control-label" for="p2">Above $100</label>
+                                                        <input type="checkbox" class="custom-control-input">
+                                                        <label class="custom-control-label" for="p2">Above $100</label>
                                                     </div>
                                                 </form>
-                                            </div>    
+                                            </div>
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-sm-3">
                                             <div class="widget size-widget border-0">
@@ -295,7 +308,7 @@
                                     </div>
                                 </div>
                             </li>
-                        </ul> 
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-8 col-5 offset-md-1">
@@ -315,274 +328,286 @@
                             <option>Sort by price: high to low</option>
                         </select>
                         <i class="fa fa-chevron-down"></i>
-                    </form> 
+                    </form>
                 </div>
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade in show active" id="one">
                     <div class="row">
-   
-                       {% for product in products %}
-    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-        <div class="product-style-03 margin-top-40">
-            <div class="thumb">
-                <a href="{{ product.get_absolute_url }}">
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="No image">
-                </a>
-                <span class="sale">Sale! 13%</span>
-                <span class="new margin-top-35">New</span>
-                <ul class="cart-action">
-                    <li><a href="{{ product.get_absolute_url }}"><i class="icon-add-to-cat"></i></a></li>
-                    <li><a href="{{ product.get_absolute_url }}"><i class="icon-heart"></i></a></li>
-                </ul>
-            </div>
-            <div class="content text-center">
-                <span class="brand">Brand: MS Collection</span>
-                <ul class="justify-content-center margin-bottom-20">
-                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
-                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
-                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
-                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
-                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
-                </ul>
-                <h6 class="title"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h6>
-                <div class="content-price d-flex align-self-center justify-content-center">
-                    <span class="new-price">$450.00</span>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endfor %}
 
-                        
-    
-                
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="d-flex justify-content-between pagination">
-                        <h6>Showing 1 to 12 of 19 products</h6>
-                        <ul>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- collection end  -->
-
-    <!-- delivery area start  -->
-    <div class="delivery-area padding-top-50">
-        <div class="container">
-            <div class="row no-gutters">
-                <div class="col-lg-4">
-                    <div class="single-delivery text-center">
-                        <i class="icon-delivery-car"></i>
-                        <h6>FREE SHIPPING, RETURN</h6>
-                        <p>Free Shipping On All US Orders</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-delivery text-center">
-                        <i class="icon-money-back"></i>
-                        <h6>MONEY BACK GUARANTEE</h6>
-                        <p>30 Days Money Back Guarantee</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-delivery text-center">
-                        <i class="icon-phone-support"></i>
-                        <h6>+1(780)8632797</h6>
-                        <p>24/7 Days Support</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- delivery area end  -->
-
-      <!-- instagram start -->
-    <div class="instagram-area margin-top-75">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="instagram-title margin-bottom-40">
-                        <h4> <span>
-    @ <a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link" target="_blank">FOLLOW</a>
-  </span>
-  US ON INSTAGRAM
-</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="instagram-slider2">
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/instagram/1.png' %}" alt="">
-                        </div>
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/instagram/2.png' %}" alt="">
-                        </div>
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/instagram/3.png' %}" alt="">
-                        </div>
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/instagram/4.png' %}" alt="">
-                        </div>
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/instagram/5.png' %}" alt="">
-                        </div>
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/instagram/6.png' %}" alt="">
-                        </div>
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/instagram/6.png' %}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- instagram end -->
-
-    <!-- delivery area start  -->
-    <div class="delivery-area margin-top-70 margin-bottom-80">
-        <div class="container">
-            <div class="border-top padding-top-60">
-                <div class="row no-gutters">
-                    <div class="col-lg-4">
-                        <div class="single-delivery-02 d-flex margin-top-20 justify-content-center">
-                            <div class="left">
-                                <i class="icon-delivery-car pink-icon"></i>
+                        {% for product in products %}
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="product-style-03 margin-top-40">
+                                <div class="thumb">
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"
+                                            alt="No image">
+                                    </a>
+                                    <span class="sale">Sale! 13%</span>
+                                    <span class="new margin-top-35">New</span>
+                                    <ul class="cart-action">
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="icon-add-to-cat"></i></a>
+                                        </li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="icon-heart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="content text-center">
+                                    <span class="brand">Brand: MS Collection</span>
+                                    <ul class="justify-content-center margin-bottom-20">
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a>
+                                        </li>
+                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="title"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                                    </h6>
+                                    <div class="content-price d-flex align-self-center justify-content-center">
+                                        <span class="new-price">$450.00</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="right">
+                        </div>
+                        {% endfor %}
+                    </div>
+
+
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex justify-content-between pagination">
+                                <h6>Showing 1 to 12 of 19 products</h6>
+                                <ul>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- collection end  -->
+
+            <!-- delivery area start  -->
+            <div class="delivery-area padding-top-50">
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="col-lg-4">
+                            <div class="single-delivery text-center">
+                                <i class="icon-delivery-car"></i>
                                 <h6>FREE SHIPPING, RETURN</h6>
                                 <p>Free Shipping On All US Orders</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="single-delivery-02 d-flex margin-top-20 justify-content-center">
-                            <div class="left">
-                                <i class="icon-money-back pink-icon"></i>
-                            </div>
-                            <div class="right">
+                        <div class="col-lg-4">
+                            <div class="single-delivery text-center">
+                                <i class="icon-money-back"></i>
                                 <h6>MONEY BACK GUARANTEE</h6>
                                 <p>30 Days Money Back Guarantee</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="single-delivery-02 d-flex margin-top-20 justify-content-center">
-                            <div class="left">
-                                <i class="icon-phone-support pink-icon"></i>
-                            </div>
-                            <div class="right">
-                                <h6>+17808632797</h6>
+                        <div class="col-lg-4">
+                            <div class="single-delivery text-center">
+                                <i class="icon-phone-support"></i>
+                                <h6>+1(780)8632797</h6>
                                 <p>24/7 Days Support</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- delivery area end  -->
+            <!-- delivery area end  -->
 
-   <!-- footer area start -->
-<footer class="footer-area footer-style-1 padding-top-70 margin-top-70">
-    <div class="footer-top padding-bottom-50">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="widget widget_nav_menu">
-                        <h4 class="widget-title">CATEGORIES</h4>
-                        <ul>
-                            <li><a href="{% url 'Ecommerce:home' %}">Women</a></li>
-                            <li><a href="{% url 'Ecommerce:home' %}">Girls</a></li>
-                        </ul>
+            <!-- instagram start -->
+            <div class="instagram-area margin-top-75">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="instagram-title margin-bottom-40">
+                                <h4> <span>
+                                        @ <a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"
+                                            target="_blank">FOLLOW</a>
+                                    </span>
+                                    US ON INSTAGRAM
+                                </h4>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="widget widget_nav_menu">
-                        <h4 class="widget-title">OUR POLICY</h4>
-                        <ul>
-                            <li><a href="{% url 'Ecommerce:contact' %}">Contact Us</a></li>
-                            <li><a href="{% url 'members:login_user' %}">My Account</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="widget contact-widget">
-                        <h4 class="widget-title">GET IN TOUCH</h4>
-                        <ul class="contact_info_list">
-                            <li class="single-info-item">
-                                <div class="icon"><i class="icon-home-foother"></i></div>
-                                <div class="details">
-                                    <span>Edmonton Alberta.<br>P.O. Box 16023 13 Ave SW. <br>T6W 3N6rfv </span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="instagram-slider2">
+                                <div class="thumb">
+                                    <img src="{% static 'assets/img/instagram/1.png' %}" alt="">
                                 </div>
-                            </li>
-                            <li class="single-info-item">
-                                <div class="icon"><i class="icon-email-subscribe"></i></div>
-                                <div class="details">Marysmartcollections@gmail.com</div>
-                            </li>
-                            <li class="single-info-item">
-                                <div class="icon"><i class="icon-call-footer"></i></div>
-                                <div class="details"><a href="tel:+17808632797">+1(780)8632797</a></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="widget widget_nav_menu">
-                        <h4 class="widget-title">FOLLOW US</h4>
-                        <ul>
-                            <li><a href="https://vm.tiktok.com/ZMSjn3ey1/"><i class="fab fa-tiktok"></i> TikTok</a></li>
-                            <li><a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"><i class="icon-instagram"></i> Instagram</a></li>
-                        </ul>
+                                <div class="thumb">
+                                    <img src="{% static 'assets/img/instagram/2.png' %}" alt="">
+                                </div>
+                                <div class="thumb">
+                                    <img src="{% static 'assets/img/instagram/3.png' %}" alt="">
+                                </div>
+                                <div class="thumb">
+                                    <img src="{% static 'assets/img/instagram/4.png' %}" alt="">
+                                </div>
+                                <div class="thumb">
+                                    <img src="{% static 'assets/img/instagram/5.png' %}" alt="">
+                                </div>
+                                <div class="thumb">
+                                    <img src="{% static 'assets/img/instagram/6.png' %}" alt="">
+                                </div>
+                                <div class="thumb">
+                                    <img src="{% static 'assets/img/instagram/6.png' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 align-self-center">
-                    <p>© Marysmartcollections 2020. Powered with <i class="fa fa-heart"></i> by <a href="http://chinazaportfollio.vercel.app" target="_blanc">Zwin</a>.</p>
-                </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li><a href="#"><img src="{% static 'assets/img/payment/1.png' %}" alt=""></a></li>
-                        <li><a href="#"><img src="{% static 'assets/img/payment/2.png' %}" alt=""></a></li>
-                        <li><a href="#"><img src="{% static 'assets/img/payment/3.png' %}" alt=""></a></li>
-                        <li><a href="#"><img src="{% static 'assets/img/payment/4.png' %}" alt=""></a></li>
-                        <li><a href="#"><img src="{% static 'assets/img/payment/5.png' %}" alt=""></a></li>
-                        <li><a href="#"><img src="{% static 'assets/img/payment/6.png' %}" alt=""></a></li>
-                    </ul>
+            <!-- instagram end -->
+
+            <!-- delivery area start  -->
+            <div class="delivery-area margin-top-70 margin-bottom-80">
+                <div class="container">
+                    <div class="border-top padding-top-60">
+                        <div class="row no-gutters">
+                            <div class="col-lg-4">
+                                <div class="single-delivery-02 d-flex margin-top-20 justify-content-center">
+                                    <div class="left">
+                                        <i class="icon-delivery-car pink-icon"></i>
+                                    </div>
+                                    <div class="right">
+                                        <h6>FREE SHIPPING, RETURN</h6>
+                                        <p>Free Shipping On All US Orders</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="single-delivery-02 d-flex margin-top-20 justify-content-center">
+                                    <div class="left">
+                                        <i class="icon-money-back pink-icon"></i>
+                                    </div>
+                                    <div class="right">
+                                        <h6>MONEY BACK GUARANTEE</h6>
+                                        <p>30 Days Money Back Guarantee</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="single-delivery-02 d-flex margin-top-20 justify-content-center">
+                                    <div class="left">
+                                        <i class="icon-phone-support pink-icon"></i>
+                                    </div>
+                                    <div class="right">
+                                        <h6>+17808632797</h6>
+                                        <p>24/7 Days Support</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</footer>
-<!-- footer area end -->
+            <!-- delivery area end  -->
+
+            <!-- footer area start -->
+            <footer class="footer-area footer-style-1 padding-top-70 margin-top-70">
+                <div class="footer-top padding-bottom-50">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="widget widget_nav_menu">
+                                    <h4 class="widget-title">CATEGORIES</h4>
+                                    <ul>
+                                        <li><a href="{% url 'Ecommerce:home' %}">Women</a></li>
+                                        <li><a href="{% url 'Ecommerce:home' %}">Girls</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="widget widget_nav_menu">
+                                    <h4 class="widget-title">OUR POLICY</h4>
+                                    <ul>
+                                        <li><a href="{% url 'Ecommerce:contact' %}">Contact Us</a></li>
+                                        <li><a href="{% url 'members:login_user' %}">My Account</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="widget contact-widget">
+                                    <h4 class="widget-title">GET IN TOUCH</h4>
+                                    <ul class="contact_info_list">
+                                        <li class="single-info-item">
+                                            <div class="icon"><i class="icon-home-foother"></i></div>
+                                            <div class="details">
+                                                <span>Edmonton Alberta.<br>P.O. Box 16023 13 Ave SW. <br>T6W 3N6rfv
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="single-info-item">
+                                            <div class="icon"><i class="icon-email-subscribe"></i></div>
+                                            <div class="details">Marysmartcollections@gmail.com</div>
+                                        </li>
+                                        <li class="single-info-item">
+                                            <div class="icon"><i class="icon-call-footer"></i></div>
+                                            <div class="details"><a href="tel:+17808632797">+1(780)8632797</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="widget widget_nav_menu">
+                                    <h4 class="widget-title">FOLLOW US</h4>
+                                    <ul>
+                                        <li><a href="https://vm.tiktok.com/ZMSjn3ey1/"><i class="fab fa-tiktok"></i>
+                                                TikTok</a></li>
+                                        <li><a
+                                                href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"><i
+                                                    class="icon-instagram"></i> Instagram</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 align-self-center">
+                                <p>© Marysmartcollections 2020. Powered with <i class="fa fa-heart"></i> by <a
+                                        href="http://chinazaportfollio.vercel.app" target="_blanc">Zwin</a>.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><a href="#"><img src="{% static 'assets/img/payment/1.png' %}" alt=""></a></li>
+                                    <li><a href="#"><img src="{% static 'assets/img/payment/2.png' %}" alt=""></a></li>
+                                    <li><a href="#"><img src="{% static 'assets/img/payment/3.png' %}" alt=""></a></li>
+                                    <li><a href="#"><img src="{% static 'assets/img/payment/4.png' %}" alt=""></a></li>
+                                    <li><a href="#"><img src="{% static 'assets/img/payment/5.png' %}" alt=""></a></li>
+                                    <li><a href="#"><img src="{% static 'assets/img/payment/6.png' %}" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer area end -->
 
 
-    <!-- back to top area start -->
-    <div class="back-to-top">
-        <span class="back-top"><i class="fa fa-angle-up"></i></span>
-    </div>
-    <!-- back to top area end -->
+            <!-- back to top area start -->
+            <div class="back-to-top">
+                <span class="back-top"><i class="fa fa-angle-up"></i></span>
+            </div>
+            <!-- back to top area end -->
 
-    <!-- all plugins here -->
-    <script src="{% static 'assets/js/vendor.js' %}"></script>
-    <!-- main js  -->
-    <script src="{% static 'assets/js/main.js' %}"></script>
-    
+            <!-- all plugins here -->
+            <script src="{% static 'assets/js/vendor.js' %}"></script>
+            <!-- main js  -->
+            <script src="{% static 'assets/js/main.js' %}"></script>
+
 </body>
 
 
