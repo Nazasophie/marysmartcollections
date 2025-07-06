@@ -21,6 +21,8 @@ pip install djangorestframework
 
 pip install humanize
 
+squareup>=37.0.0
+
 
 
 # Running the server 
