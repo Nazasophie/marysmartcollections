@@ -322,36 +322,38 @@
                 <div class="tab-pane fade in show active" id="one">
                     <div class="row">
    
-                        {% for product in products %}
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="product-style-03 margin-top-40">
-                                <div class="thumb">
-                                    <a href="{{ product.get_absolute_url }}"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
-                                        static " img/no_image.png" %}{% endif %}" alt="No image"></a>
-                                    <span class="sale">Sale! 13%</span>
-                                    <span class="new margin-top-35">New</span>
-                                    <ul class="cart-action">
-                                        <li><a href="{{ product.get_absolute_url }}"><i class="icon-add-to-cat"></i></a></li>
-                                        <li><a href="{{ product.get_absolute_url }}"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="content text-center">
-                                    <span class="brand">Brand: MS Collection</span>
-                                    <ul class="justify-content-center margin-bottom-20">
-                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
-                                        <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
-                                    </ul>
-                                    <h6 class="title"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h6>
-                                    <div class="content-price d-flex align-self-center justify-content-center">
-                                        <span class="new-price">$450.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
+                       {% for product in products %}
+    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="product-style-03 margin-top-40">
+            <div class="thumb">
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="No image">
+                </a>
+                <span class="sale">Sale! 13%</span>
+                <span class="new margin-top-35">New</span>
+                <ul class="cart-action">
+                    <li><a href="{{ product.get_absolute_url }}"><i class="icon-add-to-cat"></i></a></li>
+                    <li><a href="{{ product.get_absolute_url }}"><i class="icon-heart"></i></a></li>
+                </ul>
+            </div>
+            <div class="content text-center">
+                <span class="brand">Brand: MS Collection</span>
+                <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star"></i></a></li>
+                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
+                    <li><a href="{{ product.get_absolute_url }}"><i class="fa fa-star-o"></i></a></li>
+                </ul>
+                <h6 class="title"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h6>
+                <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">$450.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
                         
     
                 
@@ -402,7 +404,7 @@
     </div>
     <!-- delivery area end  -->
 
-     <!-- instagram start -->
+      <!-- instagram start -->
     <div class="instagram-area margin-top-75">
         <div class="container">
             <div class="row">
@@ -447,97 +449,128 @@
     </div>
     <!-- instagram end -->
 
-    <!-- footer area start -->
-    <footer class="footer-area footer-style-1 padding-top-70 margin-top-70">
-        <div class="footer-top padding-bottom-50">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="widget widget_nav_menu">
-                            <h4 class="widget-title">CATEGORIES</h4>
-                            <ul>
-                               
-                                <li><a href="{% url 'Ecommerce:home' %}">Women</a></li>
-                                <li><a href="{% url 'Ecommerce:home' %}">Girls</a></li>
-                               
-                            </ul>
+    <!-- delivery area start  -->
+    <div class="delivery-area margin-top-70 margin-bottom-80">
+        <div class="container">
+            <div class="border-top padding-top-60">
+                <div class="row no-gutters">
+                    <div class="col-lg-4">
+                        <div class="single-delivery-02 d-flex margin-top-20 justify-content-center">
+                            <div class="left">
+                                <i class="icon-delivery-car pink-icon"></i>
+                            </div>
+                            <div class="right">
+                                <h6>FREE SHIPPING, RETURN</h6>
+                                <p>Free Shipping On All US Orders</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="widget widget_nav_menu">
-                            <h4 class="widget-title">OUR POLICY</h4>
-                            <ul>
-                                
-                                <li><a href="{% url 'Ecommerce:contact' %}">Contact Us</a></li>
-                               
-                                <li><a href="{% url 'members:login_user' %}">My Account</a></li>
-                            </ul>
+                    <div class="col-lg-4">
+                        <div class="single-delivery-02 d-flex margin-top-20 justify-content-center">
+                            <div class="left">
+                                <i class="icon-money-back pink-icon"></i>
+                            </div>
+                            <div class="right">
+                                <h6>MONEY BACK GUARANTEE</h6>
+                                <p>30 Days Money Back Guarantee</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="widget contact-widget">
-                            <h4 class="widget-title">GET IN TOUCH</h4>
-                            <ul class="contact_info_list">
-                                <li class="single-info-item">
-                                    <div class="icon">
-                                        <i class="icon-home-foother"></i>
-                                    </div>
-                                    <div class="details">
-                                        <span>Edmonton Alberta.<br>P.O. Box 16023 13 Ave SW. <br>T6W 3N6rfv </span>
-                                    </div>
-                                </li>
-                                <li class="single-info-item">
-                                    <div class="icon">
-                                        <i class="icon-email-subscribe"></i>
-                                    </div>
-                                    <div class="details">
-                                       Marysmartcollections@gmail.com
-                                    </div>
-                                </li>
-                                <li class="single-info-item">
-                                    <div class="icon">
-                                        <i class="icon-call-footer"></i>
-                                    </div>
-                                    <div class="details">
-                                        <a href="tel:+17808632797">+1(780)8632797</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6">
-                        <div class="widget widget_nav_menu">
-                            <h4 class="widget-title">FOLLOW US</h4>
-                            <ul>
-                                <li><a href="https://vm.tiktok.com/ZMSjn3ey1/"><i class="fab fa-tiktok"></i> TikTok</a></li>
-                 <li><a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"><i class="icon-instagram"></i> Instagram</a></li>
-                            </ul>
+                    <div class="col-lg-4">
+                        <div class="single-delivery-02 d-flex margin-top-20 justify-content-center">
+                            <div class="left">
+                                <i class="icon-phone-support pink-icon"></i>
+                            </div>
+                            <div class="right">
+                                <h6>+17808632797</h6>
+                                <p>24/7 Days Support</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 align-self-center">
-                        <p>© Marysmartcollections 2020. Powered with <i class="fa fa-heart"></i> by <a href="http://chinazaportfollio.vercel.app" target="_blanc">Zwin</a>.</p>
-                    </div>
-                    <div class="col-md-6">
+    </div>
+    <!-- delivery area end  -->
+
+   <!-- footer area start -->
+<footer class="footer-area footer-style-1 padding-top-70 margin-top-70">
+    <div class="footer-top padding-bottom-50">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="widget widget_nav_menu">
+                        <h4 class="widget-title">CATEGORIES</h4>
                         <ul>
-                            <li><a href="#"><img src="{% static 'assets/img/payment/1.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'assets/img/payment/2.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'assets/img/payment/3.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="'{% static 'assets/img/payment/4.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'assets/img/payment/5.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'assets/img/payment/6.png' %}" alt=""></a></li>
+                            <li><a href="{% url 'Ecommerce:home' %}">Women</a></li>
+                            <li><a href="{% url 'Ecommerce:home' %}">Girls</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="widget widget_nav_menu">
+                        <h4 class="widget-title">OUR POLICY</h4>
+                        <ul>
+                            <li><a href="{% url 'Ecommerce:contact' %}">Contact Us</a></li>
+                            <li><a href="{% url 'members:login_user' %}">My Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="widget contact-widget">
+                        <h4 class="widget-title">GET IN TOUCH</h4>
+                        <ul class="contact_info_list">
+                            <li class="single-info-item">
+                                <div class="icon"><i class="icon-home-foother"></i></div>
+                                <div class="details">
+                                    <span>Edmonton Alberta.<br>P.O. Box 16023 13 Ave SW. <br>T6W 3N6rfv </span>
+                                </div>
+                            </li>
+                            <li class="single-info-item">
+                                <div class="icon"><i class="icon-email-subscribe"></i></div>
+                                <div class="details">Marysmartcollections@gmail.com</div>
+                            </li>
+                            <li class="single-info-item">
+                                <div class="icon"><i class="icon-call-footer"></i></div>
+                                <div class="details"><a href="tel:+17808632797">+1(780)8632797</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="widget widget_nav_menu">
+                        <h4 class="widget-title">FOLLOW US</h4>
+                        <ul>
+                            <li><a href="https://vm.tiktok.com/ZMSjn3ey1/"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                            <li><a href="https://www.instagram.com/reel/DJm-0GYhet-/?utm_source=ig_web_copy_link"><i class="icon-instagram"></i> Instagram</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- footer area end -->
+    </div>
+    <div class="footer-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 align-self-center">
+                    <p>© Marysmartcollections 2020. Powered with <i class="fa fa-heart"></i> by <a href="http://chinazaportfollio.vercel.app" target="_blanc">Zwin</a>.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li><a href="#"><img src="{% static 'assets/img/payment/1.png' %}" alt=""></a></li>
+                        <li><a href="#"><img src="{% static 'assets/img/payment/2.png' %}" alt=""></a></li>
+                        <li><a href="#"><img src="{% static 'assets/img/payment/3.png' %}" alt=""></a></li>
+                        <li><a href="#"><img src="{% static 'assets/img/payment/4.png' %}" alt=""></a></li>
+                        <li><a href="#"><img src="{% static 'assets/img/payment/5.png' %}" alt=""></a></li>
+                        <li><a href="#"><img src="{% static 'assets/img/payment/6.png' %}" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer area end -->
+
 
     <!-- back to top area start -->
     <div class="back-to-top">
