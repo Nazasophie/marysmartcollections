@@ -16,6 +16,11 @@ from .serializers import DRTransactionSerializer
 from .models import FlwTransactionModel, FlwPlanModel
 from .utils import create_transaction_ref
 from marysmartcollection import settings
+from square.client import Client
+import uuid
+
+# ... (existing imports and views)
+
 
 UserModel = get_user_model()
 
@@ -198,3 +203,73 @@ class PaymentParamsView(APIView):
             "customizations": {"title": plan.modal_title, "logo": plan.modal_logo_url},
         }
         return Response(data)
+    
+    
+    
+@login_required
+def checkout_square(request):
+    cart = Cart(request)
+    if not cart:
+        return redirect('cart:cart_detail')  # Redirect if cart is empty
+
+    total_price = cart.get_total_price()  # Get total from Cart
+    if request.method == 'POST':
+        nonce = request.POST.get('nonce')
+        if not nonce:
+            return render(request, 'cart/checkout_square.html', {
+                'cart': cart,
+                'error': 'Payment nonce is missing.',
+                'square_application_id': settings.SQUARE_APPLICATION_ID,
+                'square_location_id': settings.SQUARE_LOCATION_ID
+            })
+
+        # Initialize Square client
+        client = Client(
+            access_token=settings.SQUARE_ACCESS_TOKEN,
+            environment=settings.SQUARE_ENVIRONMENT
+        )
+
+        try:
+            # Create payment
+            payment_response = client.payments.create_payment(
+                body={
+                    'source_id': nonce,
+                    'amount_money': {
+                        'amount': int(total_price * 100),  # Convert to cents
+                        'currency': 'USD'
+                    },
+                    'idempotency_key': str(uuid.uuid4()),  # Unique key to prevent duplicate charges
+                    'location_id': settings.SQUARE_LOCATION_ID
+                }
+            )
+
+            if payment_response.is_success():
+                # Clear cart on successful payment
+                cart.clear()
+                return render(request, 'cart/payment_success.html', {
+                    'transaction_id': payment_response.body['payment']['id']
+                })
+            else:
+                errors = payment_response.errors
+                print(f"Square payment error: {errors}")  # Debug
+                return render(request, 'cart/checkout_square.html', {
+                    'cart': cart,
+                    'error': 'Payment failed: ' + str(errors),
+                    'square_application_id': settings.SQUARE_APPLICATION_ID,
+                    'square_location_id': settings.SQUARE_LOCATION_ID
+                })
+
+        except Exception as e:
+            print(f"Exception during payment: {str(e)}")  # Debug
+            return render(request, 'cart/checkout_square.html', {
+                'cart': cart,
+                'error': 'An error occurred during payment processing.',
+                'square_application_id': settings.SQUARE_APPLICATION_ID,
+                'square_location_id': settings.SQUARE_LOCATION_ID
+            })
+
+    return render(request, 'cart/checkout_square.html', {
+        'cart': cart,
+        'square_application_id': settings.SQUARE_APPLICATION_ID,
+        'square_location_id': settings.SQUARE_LOCATION_ID
+    })

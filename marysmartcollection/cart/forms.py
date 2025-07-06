@@ -14,7 +14,6 @@ class CartAddProductForm(forms.Form):
             self.fields['size'].choices = [(size, size) for size in product.sizes]
         else:
             self.fields['size'].choices = [
-                
                  ('S', 'S'), ('M', 'M'),
                 ('X', 'X'), ('XL', 'XL')
             ]

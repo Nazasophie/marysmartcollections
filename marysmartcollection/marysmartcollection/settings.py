@@ -105,6 +105,16 @@ DATABASES = {
 }
 
 
+# marysmartcollection/settings.py
+SQUARE_APPLICATION_ID = 'sandbox-sq0idb-el5ChuJUd0gxfJUk_Vo8ow'  # e.g., sq0idp-...
+SQUARE_ACCESS_TOKEN = 'EAAAl5B86DEy7i6oS5oCgfFaR_-N1d_TYOqIPN7rpf4o9X_YspEJODozLOZ8SnSh'    # e.g., sq0atb-...
+SQUARE_LOCATION_ID = 'your_square_location_id'      # e.g., L1234567890
+SQUARE_ENVIRONMENT = 'sandbox'
+
+
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

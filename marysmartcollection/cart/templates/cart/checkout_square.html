@@ -1,0 +1,95 @@
+
+{% load static %}
+
+<style>
+    /* assets/css/style.css */
+#card-container {
+    margin-bottom: 20px;
+}
+.alert-danger {
+    display: block;
+    margin-bottom: 10px;
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+</style>
+
+<div class="container">
+    <h2>Checkout with Square</h2>
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    <h3>Cart Summary</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Size</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.size|default:"N/A" }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.new_price }}</td>
+                <td>${{ item.total_price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><strong>Total: ${{ cart.get_total_price }}</strong></p>
+
+    <form id="payment-form" method="post" action="{% url 'cart:checkout_square' %}">
+        {% csrf_token %}
+        <div id="card-container"></div>
+        <input type="hidden" name="nonce" id="nonce">
+        <button id="card-button" type="submit" class="btn btn-primary">Pay Now</button>
+    </form>
+
+    <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+    <script src="https://web.squarecdn.com/v1/square.js"></script>
+    <script>
+    async function initializeSquare() {
+        const payments = Square.payments('{{ square_application_id }}', '{{ square_location_id }}');
+        const card = await payments.card();
+        await card.attach('#card-container');
+
+        const cardButton = document.getElementById('card-button');
+        const nonceInput = document.getElementById('nonce');
+
+        cardButton.addEventListener('click', async (event) => {
+            event.preventDefault();
+            try {
+                const result = await card.tokenize();
+                if (result.status === 'OK') {
+                    nonceInput.value = result.nonce;
+                    document.getElementById('payment-form').submit();
+                } else {
+                    console.error('Tokenization errors:', result.errors);
+                    alert('Payment failed: ' + JSON.stringify(result.errors));
+                }
+            } catch (e) {
+                console.error('Tokenization exception:', e);
+                alert('An error occurred during payment processing.');
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        initializeSquare();
+    });
+    </script>
+
+    
+</div>
